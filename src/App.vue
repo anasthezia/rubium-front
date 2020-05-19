@@ -1,0 +1,44 @@
+<template>
+  <div id="app">
+    <Nav/>
+    <Header/>
+
+    <Homepage />
+    <Vacancies/>
+  </div>
+</template>
+
+<script>
+// import HelloWorld from './components/HelloWorld.vue'
+import Homepage from './components/Homepage.vue'
+import Header from './components/Header.vue'
+import Nav from './components/Nav.vue'
+import Vacancies from './components/Vacancies.vue'
+
+
+
+export default {
+  name: 'App',
+  components: {
+    // HelloWorld,
+    Homepage,
+    Header,
+    Nav,
+    Vacancies
+  }
+}
+</script>
+
+<style>
+  html {
+    font-size: 10px;
+  }
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: left;
+  color: #434345;
+  /* margin-top: 60px; */
+}
+</style>
