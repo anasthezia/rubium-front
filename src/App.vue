@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Nav/>
+    <!-- <Nav/> -->
     <Header/>
 
     <Homepage />
@@ -12,7 +12,7 @@
 // import HelloWorld from './components/HelloWorld.vue'
 import Homepage from './components/Homepage.vue'
 import Header from './components/Header.vue'
-import Nav from './components/Nav.vue'
+// import Nav from './components/Nav.vue'
 import Vacancies from './components/Vacancies.vue'
 
 
@@ -23,7 +23,7 @@ export default {
     // HelloWorld,
     Homepage,
     Header,
-    Nav,
+    // Nav,
     Vacancies
   }
 }
@@ -34,7 +34,7 @@ export default {
     font-size: 10px;
   }
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: left;

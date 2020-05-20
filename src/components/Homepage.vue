@@ -35,6 +35,8 @@ export default {
 }
 .title {
   font-size: 10rem;
+  // font-family:  'Ubuntu', 'Roboto', Arial, sans-serif;
+  text-transform: uppercase;
 }
 .tagline{
   font-size: 2.8rem;

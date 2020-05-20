@@ -37,14 +37,14 @@
     </md-card>
   </li>
 </ul>
-<vPopup v-if="isPopupOpen" @closePopup="closePopup" popupTitle="Отклик на вакансию">      
+<Popup v-if="isPopupOpen" @closePopup="closePopup" popupTitle="Отклик на вакансию">      
 <vacancyForm/>
-</vPopup>
+</Popup>
   </div>
 </template>
 
 <script>
-  import vPopup from '../components/popup/popup';
+  import Popup from '../components/popup/popup';
   import vacancyForm from '../components/forms/vacancy-form'
 
   export default {
@@ -83,7 +83,7 @@
       },
     },
     components: {
-      vPopup, 
+      Popup, 
       vacancyForm
     }
   }
