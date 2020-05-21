@@ -221,9 +221,6 @@ export default {
   [dir="rtl"] & {
     float: right;
   }
-  img {
-    // display: block;
-  }
   &.slick-loading img {
     display: none;
   }

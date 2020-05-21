@@ -1,6 +1,5 @@
 <template>
   <div class="drawer">
-    <div class="drawer__close" @click="closeDrawer"></div>
     <div class="drawer__content">
       <div class="drawer__container">
         <MainMenu />
@@ -19,11 +18,7 @@ export default {
     return {};
   },
   computed: {},
-  methods: {
-    closeDrawer() {
-      this.$emit("closeDrawer");
-    }
-  },
+  methods: {},
   components: {
     MainMenu,
     Footer
@@ -38,7 +33,6 @@ export default {
   min-height: 100vh;
   background: #ffffff;
   padding: 140px;
-  position: fixed;
   box-sizing: border-box;
   z-index: 1000;
   &__close {

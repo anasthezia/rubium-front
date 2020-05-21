@@ -1,7 +1,10 @@
 <template>
   <div class="header">
-    <div class="menu-icon" @click="openDrawer">
-      <img alt="menu" src="../assets/images/icon-menu.svg" />
+    <div class="menu-button" v-bind:class="{ opened: isDrawerOpen }" @click="toggleDrawer">
+      <!-- <img alt="menu" src="../assets/images/icon-menu.svg" /> -->
+      <i class="menu-button__line"></i>
+      <i class="menu-button__line"></i>
+      <i class="menu-button__line"></i>
     </div>
     <Drawer v-if="isDrawerOpen" @closeDrawer="closeDrawer" />
   </div>
@@ -20,10 +23,8 @@ export default {
     Drawer
   },
   methods: {
-    openDrawer() {
-      this.isDrawerOpen = true;    },
-    closeDrawer() {
-      this.isDrawerOpen = false;
+    toggleDrawer() {
+      this.isDrawerOpen = !this.isDrawerOpen;
     }
   }
 };
@@ -31,14 +32,48 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  position: fixed;
   width: 100%;
   top: 0;
 }
-.menu-icon {
-  position: absolute;
+.menu-button {
+  position: fixed;
   right: 58px;
   top: 68px;
-  // z-index: 1000;
+  height: 24px;
+  width: 40px;
+  z-index: 1002;
+  cursor: pointer;
+  background: #fff;
+  &__line {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #0e2783;
+    right: 0;
+    transition: all 0.25s;
+    transform-origin: right;
+    &:nth-child(1) {
+      top: 0;
+    }
+    &:nth-child(2) {
+      top: 50%;
+    }
+    &:nth-child(3) {
+      top: 100%;
+    }
+  }
+  &.opened {
+    .menu-button__line {
+      top: 50%;
+      &:nth-child(1) {
+        transform: rotate(35deg);
+        width: 50%;
+      }
+      &:nth-child(3) {
+        transform: rotate(-35deg);
+        width: 50%;
+      }
+    }
+  }
 }
 </style>
