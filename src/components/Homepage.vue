@@ -1,7 +1,7 @@
 <template>
   <div class="homepage">
     <div class="homepage__logo">
-      <img alt="Rubium logo" src="../assets/main_logo.svg">
+      <img alt="Rubium logo" src="../assets/images/main_logo.svg">
     </div>
     <div class="homepage__text">
       <h1 class="title">Rubium</h1>

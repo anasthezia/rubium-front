@@ -17,7 +17,7 @@
           </div>
           <md-card-expand-trigger>
             <md-button class="md-icon-button">
-              <img alt="menu" src="../assets/collapse-btn.svg">
+              <img alt="menu" src="../assets/images/collapse-btn.svg">
             </md-button>
           </md-card-expand-trigger>
       </md-card-header>
@@ -92,7 +92,7 @@
 <style lang="scss" scoped>
 .vacanciespage{
     min-height: 100vh;
-    background: url('./../assets/bg.png') no-repeat 0 0 /cover transparent;
+    background: url('./../assets/images/bg.png') no-repeat 0 0 /cover transparent;
     background-attachment: fixed;
 }
 .vacancies-list {

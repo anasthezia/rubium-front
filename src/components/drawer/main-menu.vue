@@ -35,9 +35,11 @@ export default {
   &__link {
     color: #434345 !important;
     font-size: 6.4rem;
-    line-height: 1.5;
+    line-height: 1;
     font-weight: 500;
-    padding: 3.2rem 0;
+    padding: 0;
+    margin: 0 0 6.4rem;
+    display: block;
     &:hover,
     &:focus,
     &:active {

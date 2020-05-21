@@ -1,31 +1,29 @@
 <template>
   <div class="header">
-    <div class="menu-icon" @click="openDraver">
-      <img alt="menu" src="../assets/icon-menu.svg" />
+    <div class="menu-icon" @click="openDrawer">
+      <img alt="menu" src="../assets/images/icon-menu.svg" />
     </div>
-    <Draver v-if="isDraverOpen" @closeDraver="closeDraver" />
+    <Drawer v-if="isDrawerOpen" @closeDrawer="closeDrawer" />
   </div>
 </template>
 
 <script>
-import Draver from "../components/draver/draver";
+import Drawer from "../components/drawer/drawer";
 export default {
   data: function() {
     return {
-      isDraverOpen: false
+      isDrawerOpen: false
     };
   },
   name: "Header",
   components: {
-    Draver
+    Drawer
   },
   methods: {
-    openDraver() {
-      this.isDraverOpen = true;
-      console.log("2222222222");
-    },
-    closeDraver() {
-      this.isDraverOpen = false;
+    openDrawer() {
+      this.isDrawerOpen = true;    },
+    closeDrawer() {
+      this.isDrawerOpen = false;
     }
   }
 };

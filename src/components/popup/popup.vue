@@ -70,7 +70,7 @@ export default {
     right: 20px;
     width: 28px;
     height: 28px;
-    background: url('./../../assets/close-btn.svg') no-repeat 0 0 transparent;
+    background: url('./../../assets/images/close-btn.svg') no-repeat 0 0 transparent;
   }
 }
 
