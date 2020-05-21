@@ -9,11 +9,6 @@ Vue.config.productionTip = false
 Vue.use(VueMaterial)
 
 new Vue({
-  data: {
-    items: [
-      { message: 'Foo' },
-      { message: 'Bar' }
-    ]
-  },
+  data: {},
   render: h => h(App, this),
 }).$mount('#app')

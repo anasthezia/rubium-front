@@ -174,9 +174,7 @@
   }
 
   .md-card {
-    // width: 320px;
     margin: 4px;
     display: block;
-    vertical-align: top;
   }
 </style>

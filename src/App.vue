@@ -4,6 +4,7 @@
     <Header/>
 
     <Homepage />
+    <Services/>
     <Vacancies/>
   </div>
 </template>
@@ -12,7 +13,7 @@
 // import HelloWorld from './components/HelloWorld.vue'
 import Homepage from './components/Homepage.vue'
 import Header from './components/Header.vue'
-// import Nav from './components/Nav.vue'
+import Services from './components/services/services.vue'
 import Vacancies from './components/Vacancies.vue'
 
 
@@ -20,10 +21,9 @@ import Vacancies from './components/Vacancies.vue'
 export default {
   name: 'App',
   components: {
-    // HelloWorld,
     Homepage,
     Header,
-    // Nav,
+    Services,
     Vacancies
   }
 }
