@@ -1,6 +1,7 @@
 <template>
   <div class="form-wrapper">
     <form class="form vacancy-form">
+      <h2>{{selectedVacancy}}</h2>
       <div class="form__row">
         <div class="form__cell">
           <input
@@ -65,7 +66,9 @@
         </div>
       </div>
       <div class="fofm__actions">
-        <button class="btn btn-1" @click="closePopup">Отправить</button>
+        <button class="btn btn-1" 
+        
+        >Отправить</button>
       </div>
     </form>
   </div>
@@ -73,6 +76,12 @@
 <script>
 export default {
     name: 'vacancy-form',
+   props: {
+        selectedVacancy: {
+            type: String,
+            default: "",
+        }
+    },
 }
 </script>
 <style lang="scss">

@@ -14,7 +14,7 @@
 import Homepage from './components/Homepage.vue'
 import Header from './components/Header.vue'
 import Services from './components/services/services.vue'
-import Vacancies from './components/Vacancies.vue'
+import Vacancies from './components/vacancies/Vacancies.vue'
 
 
 
