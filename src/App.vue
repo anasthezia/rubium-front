@@ -5,6 +5,7 @@
 
     <Homepage />
     <Services/>
+    <Portfolio/>
     <Vacancies/>
   </div>
 </template>
@@ -14,6 +15,7 @@
 import Homepage from './components/Homepage.vue'
 import Header from './components/Header.vue'
 import Services from './components/services/services.vue'
+import Portfolio from './components/portfolio/portfolio.vue'
 import Vacancies from './components/vacancies/Vacancies.vue'
 
 
@@ -24,6 +26,7 @@ export default {
     Homepage,
     Header,
     Services,
+    Portfolio,
     Vacancies
   }
 }

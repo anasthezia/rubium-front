@@ -1,12 +1,11 @@
 <template>
   <div class="header">
-    <div class="menu-button" v-bind:class="{ opened: isDrawerOpen }" @click="toggleDrawer">
-      <!-- <img alt="menu" src="../assets/images/icon-menu.svg" /> -->
+    <div class="menu-button" :class="{ opened: isDrawerOpen }" @click="toggleDrawer">
       <i class="menu-button__line"></i>
       <i class="menu-button__line"></i>
       <i class="menu-button__line"></i>
     </div>
-    <Drawer v-if="isDrawerOpen" @closeDrawer="closeDrawer" />
+    <Drawer v-if="isDrawerOpen"  />
   </div>
 </template>
 

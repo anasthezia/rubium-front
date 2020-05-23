@@ -1,9 +1,9 @@
 
 
 <template>
-  <div class="vacancies-page">
+  <div class="vacancies-page page">
     <div class="vacancies-page__container">
-      <h2>Вакансии</h2>
+      <h2 class="page__title vacancies-page__title">Вакансии</h2>
       <div class="vacancies-list">
         <Vacancy
           class="vacancies-list__item"
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import Popup from "../../components/popup/popup";
+import Popup from "../../components/common/popup";
 import vacancyForm from "../../components/forms/vacancy-form";
 import Vacancy from "./vacancy";
 
@@ -86,6 +86,9 @@ export default {
     transparent;
   background-attachment: fixed;
   padding: 2rem 0;
+    &__title {
+    @include colorGradient( #1B9F89, #55D999, 45deg);
+  }
 
   &__container {
     width: 80%;

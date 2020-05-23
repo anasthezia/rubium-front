@@ -1,5 +1,13 @@
 @import 'vars.scss';
 
+.page {
+    min-height: 100vh;
+    &__title {
+        font-size: 4.8rem;
+        text-transform: uppercase;
+    }
+}
+
 .btn {
     border-radius: 2px;
     border-width: 1px;
@@ -11,5 +19,12 @@
     cursor: pointer;
     background: none;
     color: #0E2783;
+    font-weight: 500;
     border-color:  #0E2783;
+    background: transparent;
+    transition: all 0.25s ;
+    &:hover {
+        color: $white;
+        @include bgGradient(#0026CA, #448AFF, 45deg)
+    }
 }

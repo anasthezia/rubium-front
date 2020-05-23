@@ -1,0 +1,41 @@
+$white: #ffffff;
+$black: #434345; 
+@mixin linearGradient($oldColor, $gradientList, $direction) {
+	background: $oldColor;
+	$directionRevers:null; 
+	@if $direction == left {
+		$directionRevers: right;
+	}
+	@else if $direction == right {
+		$directionRevers: left;
+	}
+	@else if $direction == top {
+		$directionRevers: bottom;
+	}
+	@else if $direction == bottom {
+		$directionRevers: top;
+	}
+	@include buildGradientLine($gradientList); 
+	@each $prefix in $browsersPrefix {
+		background:-#{$prefix}-linear-gradient($direction, $resultLine);
+	}
+	background: linear-gradient(to $directionRevers, $resultLine);
+}
+
+@mixin bgGradient($startColor, $endColor, $direction) {
+    background: $startColor; /* Old browsers */
+    background: -moz-linear-gradient(direction, $startColor 0%, $endColor 100%); /* FF3.6+ */
+    background: -webkit-linear-gradient(direction, $startColor 0%,$endColor 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(direction, $startColor 0%, $endColor 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(direction, $startColor 0%,                                                                                                                                   $endColor 100%); /* IE10+ */
+    background: linear-gradient($startColor 0%,$endColor); /* W3C */
+}
+
+@mixin colorGradient($startColor, $endColor, $direction) {
+    color: $startColor; /* Old browsers */
+    color: -moz-linear-gradient(direction, $startColor 0%, $endColor 100%); /* FF3.6+ */
+    color: -webkit-linear-gradient(direction, $startColor 0%,$endColor 100%); /* Chrome10+,Safari5.1+ */
+    color: -o-linear-gradient(direction, $startColor 0%, $endColor 100%); /* Opera 11.10+ */
+    color: -ms-linear-gradient(direction, $startColor 0%,                                                                                                                                   $endColor 100%); /* IE10+ */
+    color: linear-gradient($startColor 0%,$endColor); /* W3C */
+}

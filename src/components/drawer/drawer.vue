@@ -29,6 +29,7 @@ export default {
 <style lang="scss" scoped>
 .drawer {
   position: fixed;
+  top: 0;
   width: 100vw;
   min-height: 100vh;
   background: #ffffff;

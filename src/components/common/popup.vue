@@ -56,7 +56,7 @@ export default {
 .v-popup {
   width: 702px;
   min-height: 200px;
-  background: #ffffff;
+  background: $white;
   padding: 40px;
   left: 50%;
   top:50%;
