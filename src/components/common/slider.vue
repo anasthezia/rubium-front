@@ -3,17 +3,6 @@
     <slick
       ref="slick"
       :options="slickOptions"
-      @afterChange="handleAfterChange"
-      @beforeChange="handleBeforeChange"
-      @breakpoint="handleBreakpoint"
-      @destroy="handleDestroy"
-      @edge="handleEdge"
-      @init="handleInit"
-      @reInit="handleReInit"
-      @setPosition="handleSetPosition"
-      @swipe="handleSwipe"
-      @lazyLoaded="handleLazyLoaded"
-      @lazyLoadError="handleLazeLoadError"
     >
       <slot></slot>
     </slick>
@@ -25,6 +14,8 @@ import Slick from "vue-slick";
 export default {
   name: "slider",
   components: { Slick },
+  props: {
+    slickOptions:Object},
   methods: {
     next() {
       this.$refs.slick.next();
@@ -40,46 +31,44 @@ export default {
       });
     },
 
-    handleAfterChange(event, slick, currentSlide) {
-      console.log("handleAfterChange", event, slick, currentSlide);
-    },
-    handleBeforeChange(event, slick, currentSlide, nextSlide) {
-      console.log("handleBeforeChange", event, slick, currentSlide, nextSlide);
-    },
-    handleBreakpoint(event, slick, breakpoint) {
-      console.log("handleBreakpoint", event, slick, breakpoint);
-    },
-    handleDestroy(event, slick) {
-      console.log("handleDestroy", event, slick);
-    },
-    handleEdge(event, slick, direction) {
-      console.log("handleEdge", event, slick, direction);
-    },
-    handleInit(event, slick) {
-      console.log("handleInit", event, slick);
-    },
-    handleReInit(event, slick) {
-      console.log("handleReInit", event, slick);
-    },
-    handleSetPosition(event, slick) {
-      console.log("handleSetPosition", event, slick);
-    },
-    handleSwipe(event, slick, direction) {
-      console.log("handleSwipe", event, slick, direction);
-    },
-    handleLazyLoaded(event, slick, image, imageSource) {
-      console.log("handleLazyLoaded", event, slick, image, imageSource);
-    },
-    handleLazeLoadError(event, slick, image, imageSource) {
-      console.log("handleLazeLoadError", event, slick, image, imageSource);
-    }
+    // handleAfterChange(event, slick, currentSlide) {
+    //   // console.log("handleAfterChange", event, slick, currentSlide);
+    // },
+    // handleBeforeChange(event, slick, currentSlide, nextSlide) {
+    //   // console.log("handleBeforeChange", event, slick, currentSlide, nextSlide);
+    // },
+    // handleBreakpoint(event, slick, breakpoint) {
+    //   // console.log("handleBreakpoint", event, slick, breakpoint);
+    // },
+    // handleDestroy(event, slick) {
+    //   // console.log("handleDestroy", event, slick);
+    // },
+    // handleEdge(event, slick, direction) {
+    //   // console.log("handleEdge", event, slick, direction);
+    // },
+    // handleInit(event, slick) {
+    //   // console.log("handleInit", event, slick);
+    // },
+    // handleReInit(event, slick) {
+    //   // console.log("handleReInit", event, slick);
+    // },
+    // handleSetPosition(event, slick) {
+    //   // console.log("handleSetPosition", event, slick);
+    // },
+    // handleSwipe(event, slick, direction) {
+    //   // console.log("handleSwipe", event, slick, direction);
+    // },
+    // handleLazyLoaded(event, slick, image, imageSource) {
+    //   // console.log("handleLazyLoaded", event, slick, image, imageSource);
+    // },
+    // handleLazeLoadError(event, slick, image, imageSource) {
+    //   // console.log("handleLazeLoadError", event, slick, image, imageSource);
+    // }
   }
 };
 </script>
 
 <style lang="scss">
-* Slider */
-
 .slick-slider {
   position: relative;
   display: block;
@@ -100,7 +89,7 @@ export default {
   display: block;
   margin: 0 auto;
   padding: 0;
-  width: calc(100vw - 180px);
+  // width: calc(100vw - 180px);
   &:focus {
     outline: none;
   }
@@ -126,6 +115,7 @@ export default {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  height: inherit;
 
   &:before,
   &:after {
@@ -143,7 +133,7 @@ export default {
 }
 .slick-slide {
   float: left;
-  height: calc(100vh - 120px);
+  // height: calc(100vh - 120px);
   min-height: 1px;
   [dir="rtl"] & {
     float: right;
@@ -233,4 +223,5 @@ export default {
   &:hover {
     right: 50px;
   }
+}
 </style>
