@@ -5,20 +5,20 @@
       <div class="portfolio-page__filters filters">фильтры</div>
     </div>
     <Slider :slickOptions="slickOptions">
-      <div class="project" v-for="project in projects" :key="project.title">
-        <div class="project__image">
-          <img :src=" require('../../assets/images/projects/' + project.image)" alt />
-        </div>
-      </div>
+      <Project 
+      v-for="project in projects" 
+      :key="project.title" 
+      :project=project />
     </Slider>
   </div>
 </template>
 
 <script>
 import Slider from "../common/slider";
+import Project from "./project";
 export default {
   name: "portfolo",
-  components: { Slider },
+  components: { Slider, Project },
 
   data: function() {
     return {
@@ -104,24 +104,12 @@ export default {
     margin: 6rem auto;
   }
   .slick-list {
-    height: calc(100vw/3 - 2rem);
+    height: calc(100vw / 3 - 2rem);
   }
 
   .slick-slide {
     height: inherit;
     margin: 0 1rem;
-  }
-}
-.project {
-  display: flex;
-  flex-wrap: nowrap;
-  background: $white;
-  height: inherit;
-  &__image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: inherit;
   }
 }
 </style>
