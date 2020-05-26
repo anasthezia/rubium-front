@@ -8,7 +8,7 @@
         <Vacancy
           class="vacancies-list__item"
           :class="item.style"
-          v-for="item in vacancies"
+          v-for="item in VACANCIES"
           :key="item.title"
           :vacancy_data="item"
           @sentVacancy="openPopup"
@@ -16,7 +16,7 @@
       </div>
     </div>
     <Popup v-if="isPopupOpen" @closePopup="closePopup" popupTitle="Отклик на вакансию">
-      <vacancyForm :selectedVacancy=selectedVacancy />
+      <vacancyForm :selectedVacancy="selectedVacancy" />
     </Popup>
   </div>
 </template>
@@ -25,56 +25,40 @@
 import Popup from "../../components/common/popup";
 import vacancyForm from "../../components/forms/vacancy-form";
 import Vacancy from "./vacancy";
+import { mapActions, mapGetters } from "vuex";
 
 export default {
-  data: function() {
-    return {
-      isPopupOpen: false,
-      selectedVacancy: '',
-      vacancies: [
-        {
-          title: "Junior frontend developer",
-          tags: ["html", "css", "js", "webpack", "gulp", "git"],
-          style: "style-1",
-          content:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non, voluptas eius illo quas, saepe voluptate pariatur in deleniti minus sint. Excepturi."
-        },
-        {
-          title: "Middle backend developer",
-          tags: ["php", "laravel", "MySql", "docker", "Postgress", "git"],
-          style: "style-2",
-          content:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non, voluptas eius illo quas, saepe voluptate pariatur in deleniti minus sint. Excepturi."
-        },
-        {
-          title: "Sales manager",
-          tags: ["english", "переговоры", "деловая переписка", "продажи"],
-          style: "style-3",
-          content:
-            "<div class='1111'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non, voluptas eius illo quas, saepe voluptate pariatur in deleniti minus sint. Excepturi.</div>"
-        }
-      ]
-    };
-  },
   name: "Vacancies",
-  computed: {},
-  methods: {
-    openPopup(data) {
-      this.isPopupOpen = true;
-      this.selectedVacancy = data
-    },
-    closePopup() {
-      this.isPopupOpen = false;
-      this.selectedVacancy = ""
-    },
-    showChild(data) {
-      console.log(data);
-    }
-  },
   components: {
     Popup,
     vacancyForm,
     Vacancy
+  },
+  data: function() {
+    return {
+      isPopupOpen: false,
+      selectedVacancy: ""
+    };
+  },
+  computed: {
+    ...mapGetters([
+      'VACANCIES'
+
+    ])
+  },
+  methods: {
+    ...mapActions(["GET_VACANCIES_FROM_API"]),
+    openPopup(data) {
+      this.isPopupOpen = true;
+      this.selectedVacancy = data;
+    },
+    closePopup() {
+      this.isPopupOpen = false;
+      this.selectedVacancy = "";
+    }
+  },
+  mounted() {
+    this.GET_VACANCIES_FROM_API();
   }
 };
 </script>
@@ -86,8 +70,8 @@ export default {
     transparent;
   background-attachment: fixed;
   padding: 2rem 0;
-    &__title {
-    @include colorGradient( #1B9F89, #55D999, 45deg);
+  &__title {
+    @include colorGradient(#1b9f89, #55d999, 45deg);
   }
 
   &__container {
