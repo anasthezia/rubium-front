@@ -38,5 +38,55 @@
       "content":
         "<div class='1111'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non, voluptas eius illo quas, saepe voluptate pariatur in deleniti minus sint. Excepturi.</div>"
     }
+  ], 
+  "projects": [
+    {
+      "title": "iGuides",
+      "image": "iguides.png",
+      "tags": [
+        "bitrix",
+        "frontend",
+        "backend",
+        "медиаиздание",
+        "новостной портал"
+      ],
+      "date": "2016"
+    },
+    {
+      "title": "Digger",
+      "image": "digger.png",
+      "tags": [
+        "bitrix",
+        "frontend",
+        "backend",
+        "медиаиздание",
+        "новостной портал"
+      ],
+      "date": "2016"
+    },
+    {
+      "title": "Yandex maps plugin",
+      "image": "ya.png",
+      "tags": [
+        "bitrix",
+        "frontend",
+        "backend",
+        "медиаиздание",
+        "новостной портал"
+      ],
+      "date": "2016"
+    },
+    {
+      "title": "Qood",
+      "image": "qood.png",
+      "tags": [
+        "bitrix",
+        "frontend",
+        "backend",
+        "медиаиздание",
+        "новостной портал"
+      ],
+      "date": "2016"}
+
   ]
 }
