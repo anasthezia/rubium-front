@@ -4,7 +4,9 @@
       <h4 class="footer__title">Работа у нас</h4>
       <ul class="footer-menu">
         <li class="footer-menu__link">
-          <a href="#">Вакансии</a>
+          <router-link :to="{name: 'vacancies'}">
+            Вакансии 
+          </router-link>
         </li>
         <li class="footer-menu__link">
           <a href="#">Стажировка</a>

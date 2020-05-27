@@ -199,7 +199,7 @@ export default {
   transform: translateY(-50%) scale(0.95);
   width: 38px;
   height: 72px;
-  z-index: 10;
+  z-index: 0;
   cursor: pointer;
   opacity: 0.75;
   transition: all 0.45s;

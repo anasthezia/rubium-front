@@ -1,47 +1,18 @@
 <template>
   <div id="app">
-    <!-- <Nav/> -->
-    <Header/>
-
-    <Homepage />
-    <Services/>
-    <Portfolio/>
-    <Vacancies/>
+    <Header />
+    <router-view></router-view>
   </div>
 </template>
-
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-import Homepage from './components/Homepage.vue'
-import Header from './components/Header.vue'
-import Services from './components/services/services.vue'
-import Portfolio from './components/portfolio/portfolio.vue'
-import Vacancies from './components/vacancies/Vacancies.vue'
-
-
-
+import Header from "./components/Header.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    Homepage,
-    Header,
-    Services,
-    Portfolio,
-    Vacancies
+    Header
   }
-}
+};
 </script>
 
 <style>
-  html {
-    font-size: 10px;
-  }
-#app {
-  font-family: Roboto, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: left;
-  color: #434345;
-  /* margin-top: 60px; */
-}
 </style>

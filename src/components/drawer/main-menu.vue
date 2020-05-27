@@ -5,10 +5,10 @@
         <a class="menu__link" href="#">О компании</a>
       </li>
       <li class="menu__item">
-        <a class="menu__link" href="#">Услуги</a>
+        <router-link class="menu__link" :to="{name: 'services'}">Услуги</router-link>
       </li>
       <li class="menu__item">
-        <a class="menu__link" href="#">Портфолио</a>
+        <router-link class="menu__link" :to="{name: 'portfolio'}">Портфолио</router-link>
       </li>
       <li class="menu__item">
         <a class="menu__link" href="#">Блог</a>
@@ -23,7 +23,8 @@ export default {
   data() {
     return {};
   },
-  computed: {}
+  computed: {},
+  methods: {}
 };
 </script>
 
@@ -33,17 +34,22 @@ export default {
   padding: 0;
   margin: 0;
   &__link {
-    color: #434345 !important;
+    color: #434345;
+    text-decoration: none;
     font-size: 6.4rem;
     line-height: 1;
     font-weight: 500;
     padding: 0;
     margin: 0 0 6.4rem;
     display: block;
+    opacity: 0.8;
+    transition: all 0.5s;
     &:hover,
     &:focus,
     &:active {
       text-decoration: none;
+      opacity: 1;
+      transform: translateX(12px);
     }
   }
 }

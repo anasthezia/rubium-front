@@ -1,11 +1,20 @@
 <template>
   <div class="header">
-    <div class="menu-button" :class="{ opened: isDrawerOpen }" @click="toggleDrawer">
+    <div class="header__logo" v-if="!$route.meta.hideLogo">
+      <router-link :to="{name: 'main'}">
+        <img alt="Rubium logo" src="../assets/images/logo.svg" />
+      </router-link>
+    </div>
+    <div
+      class="menu-button"
+      :class="{ opened: isDrawerOpen }"
+      @click="toggleDrawer"
+    >
       <i class="menu-button__line"></i>
       <i class="menu-button__line"></i>
       <i class="menu-button__line"></i>
     </div>
-    <Drawer v-if="isDrawerOpen"  />
+    <Drawer v-if="isDrawerOpen" />
   </div>
 </template>
 
@@ -24,6 +33,9 @@ export default {
   methods: {
     toggleDrawer() {
       this.isDrawerOpen = !this.isDrawerOpen;
+    },
+    closeDrawer() {
+      this.isDrawerOpen = false;
     }
   }
 };
@@ -32,12 +44,20 @@ export default {
 <style lang="scss" scoped>
 .header {
   width: 100%;
-  top: 0;
+  display: flex;
+  position: fixed;
+  flex-wrap: nowrap;
+  z-index: 1;
+  background:  rgba($white, 30%);
+  &__logo {
+    width: 182px;
+    margin: 40px 0 0 60px;
+  }
 }
 .menu-button {
   position: fixed;
   right: 58px;
-  top: 68px;
+  top: 54px;
   height: 24px;
   width: 40px;
   z-index: 1002;
