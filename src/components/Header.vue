@@ -7,37 +7,37 @@
     </div>
     <div
       class="menu-button"
-      :class="{ opened: isDrawerOpen }"
-      @click="toggleDrawer"
+      :class="{ opened: DRAVEROPEN }"
+      @click=TOGGLEDRAWER
     >
       <i class="menu-button__line"></i>
       <i class="menu-button__line"></i>
       <i class="menu-button__line"></i>
     </div>
-    <Drawer v-if="isDrawerOpen" />
+    <Drawer v-if=DRAVEROPEN />
   </div>
 </template>
 
 <script>
 import Drawer from "../components/drawer/drawer";
+import { mapGetters, mapActions } from "vuex";
+
 export default {
   data: function() {
-    return {
-      isDrawerOpen: false
-    };
+    return{}
   },
   name: "Header",
   components: {
     Drawer
   },
   methods: {
-    toggleDrawer() {
-      this.isDrawerOpen = !this.isDrawerOpen;
-    },
-    closeDrawer() {
-      this.isDrawerOpen = false;
-    }
-  }
+    ...mapActions(['TOGGLEDRAWER']),
+  },
+    computed: {
+    ...mapGetters([
+      'DRAVEROPEN'
+
+    ])}
 };
 </script>
 

@@ -4,13 +4,13 @@
       <li class="menu__item">
         <a class="menu__link" href="#">О компании</a>
       </li>
-      <li class="menu__item">
+      <li class="menu__item" @click="CLOSEDRAWER">
         <router-link class="menu__link" :to="{name: 'services'}">Услуги</router-link>
       </li>
-      <li class="menu__item">
+      <li class="menu__item" @click="CLOSEDRAWER">
         <router-link class="menu__link" :to="{name: 'portfolio'}">Портфолио</router-link>
       </li>
-      <li class="menu__item">
+      <li class="menu__item" ref="menu-link">
         <a class="menu__link" href="#">Блог</a>
       </li>
     </ul>
@@ -18,13 +18,15 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   name: "mainMenu",
   data() {
     return {};
   },
   computed: {},
-  methods: {}
+  methods: { ...mapActions(["CLOSEDRAWER"]) }
 };
 </script>
 

@@ -3,10 +3,8 @@
     <div class="job">
       <h4 class="footer__title">Работа у нас</h4>
       <ul class="footer-menu">
-        <li class="footer-menu__link">
-          <router-link :to="{name: 'vacancies'}">
-            Вакансии 
-          </router-link>
+        <li class="footer-menu__link" @click="CLOSEDRAWER">
+          <router-link :to="{name: 'vacancies'}">Вакансии</router-link>
         </li>
         <li class="footer-menu__link">
           <a href="#">Стажировка</a>
@@ -41,14 +39,17 @@
       </ul>
     </div>
     <div class="footer__actions">
-      <button class="btn footer__actions-btn"  >Написать</button>
+      <button class="btn footer__actions-btn">Написать</button>
     </div>
   </footer>
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
-  name: "Footer"
+  name: "Footer",
+  methods: { ...mapActions(["CLOSEDRAWER"]) }
 };
 </script>
 
@@ -61,13 +62,13 @@ export default {
     margin: 0 0 2.8rem;
   }
   &__actions {
-      margin: 6.4rem 0 0;
-      display: flex;
-      justify-content: space-around;
+    margin: 6.4rem 0 0;
+    display: flex;
+    justify-content: space-around;
   }
   &__actions-btn {
-      font-size: 2.4rem;
-      padding: 1rem 3.5rem;
+    font-size: 2.4rem;
+    padding: 1rem 3.5rem;
   }
 }
 .footer-menu {
