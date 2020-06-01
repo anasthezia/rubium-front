@@ -1,5 +1,6 @@
 <template>
-  <div class="project" :class="{ opened: isProjectOpen }" @click="toggleProject">
+  <div class="project" :class="{ opened: project.title==SELECTED_PROJECT }" 
+  @click=SELECT_PROJECT(project.title)>
     <div class="project__image">
       <img :src=" require('../../assets/images/projects/' + project.image)" alt />
     </div>
@@ -7,6 +8,7 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from "vuex";
 export default {
   name: "Project",
   props: {
@@ -22,8 +24,15 @@ export default {
       isProjectOpen: false
     };
   },
+    computed: {
+    ...mapGetters([
+      'SELECTED_PROJECT'
+    ])
+  },
   methods: {
-    toggleProject() {
+ ...mapActions(["SELECT_PROJECT"]) ,
+
+    selectProject() {
       this.isProjectOpen = !this.isProjectOpen;
     }
   }
@@ -40,7 +49,8 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: inherit;
+    height: 100%;
+    width: 100%;
   }
 }
 </style>

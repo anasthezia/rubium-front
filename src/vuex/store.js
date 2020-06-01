@@ -9,8 +9,8 @@ let store = new Vuex.Store({
     state: {
         vacancies: [],
         projects: [],
-        selectedProject: [], 
-        isDrawerOpen11: false
+        selectedProject: null,
+        isDrawerOpen: false
     },
     mutations: {
         SET_VACANSIES_TO_STATE: (state, vacancies) => {
@@ -19,6 +19,16 @@ let store = new Vuex.Store({
         SET_PROJECTS_TO_STATE: (state, projects) => {
             state.projects = projects.data;
         },
+        CHANGE_DRAWER: (state) => {
+            state.isDrawerOpen = !state.isDrawerOpen;
+        },
+        CLOSE_DRAWER: (state) => {
+            state.isDrawerOpen = false;
+        },
+        OPEN_PROJECT: (state, index) =>{
+            state.selectedProject = index;
+            console.log('1111111', state.selectedProject)
+        }
     },
     actions: {
         GET_VACANCIES_FROM_API({ commit }) {
@@ -46,12 +56,17 @@ let store = new Vuex.Store({
                     console.log(error);
                     return error;
                 })
-        }, 
-        TOGGLEDRAWER({state}) {
-            state.isDrawerOpen11 = !state.isDrawerOpen11;
         },
-        CLOSEDRAWER({state}) {
-            state.isDrawerOpen11 = false;
+
+        TOGGLE_DRAWER({ commit }) {
+            commit('CHANGE_DRAWER')
+        },
+        CLOSE_DRAWER({ commit }) {
+            commit('CLOSE_DRAWER')
+
+        },
+        SELECT_PROJECT({commit}, index){
+            commit ('OPEN_PROJECT', index)
         }
     },
     getters: {
@@ -61,8 +76,11 @@ let store = new Vuex.Store({
         PROJECTS(state) {
             return state.projects
         },
-        DRAVEROPEN(state) {
-            return state.isDrawerOpen11
+        DRAWER_OPEN(state) {
+            return state.isDrawerOpen
+        },
+        SELECTED_PROJECT(state) {
+        return state.selectedProject
         }
     }
 }
