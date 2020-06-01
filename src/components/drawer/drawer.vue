@@ -19,6 +19,12 @@ export default {
   },
   computed: {},
   methods: {},
+  mounted() {
+    console.log("start animation");
+  },
+  beforeDestroy() {
+    console.log('start destroy')
+  },
   components: {
     MainMenu,
     Footer
@@ -36,15 +42,8 @@ export default {
   padding: 140px;
   box-sizing: border-box;
   z-index: 1000;
-  &__close {
-    position: absolute;
-    right: 58px;
-    top: 68px;
-    width: 52px;
-    height: 40px;
-    background: url("./../../assets/images/close-draver-btn.svg") no-repeat 0 0
-      transparent;
-  }
+  box-shadow: -10px 0 40px #4343455c;
+
   &__container {
     display: flex;
     flex-wrap: nowrap;

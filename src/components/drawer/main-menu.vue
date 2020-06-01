@@ -4,10 +4,10 @@
       <li class="menu__item">
         <a class="menu__link" href="#">О компании</a>
       </li>
-      <li class="menu__item" @click="CLOSEDRAWER">
+      <li class="menu__item" @click="CLOSE_DRAWER">
         <router-link class="menu__link" :to="{name: 'services'}">Услуги</router-link>
       </li>
-      <li class="menu__item" @click="CLOSEDRAWER">
+      <li class="menu__item" @click="CLOSE_DRAWER">
         <router-link class="menu__link" :to="{name: 'portfolio'}">Портфолио</router-link>
       </li>
       <li class="menu__item" ref="menu-link">
@@ -26,7 +26,7 @@ export default {
     return {};
   },
   computed: {},
-  methods: { ...mapActions(["CLOSEDRAWER"]) }
+  methods: { ...mapActions(["CLOSE_DRAWER"]) }
 };
 </script>
 

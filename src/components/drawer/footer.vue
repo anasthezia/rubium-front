@@ -3,7 +3,7 @@
     <div class="job">
       <h4 class="footer__title">Работа у нас</h4>
       <ul class="footer-menu">
-        <li class="footer-menu__link" @click="CLOSEDRAWER">
+        <li class="footer-menu__link" @click="CLOSE_DRAWER">
           <router-link :to="{name: 'vacancies'}">Вакансии</router-link>
         </li>
         <li class="footer-menu__link">
@@ -49,7 +49,7 @@ import { mapActions } from "vuex";
 
 export default {
   name: "Footer",
-  methods: { ...mapActions(["CLOSEDRAWER"]) }
+  methods: { ...mapActions(["CLOSE_DRAWER"]) }
 };
 </script>
 

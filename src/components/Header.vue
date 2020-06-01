@@ -5,16 +5,14 @@
         <img alt="Rubium logo" src="../assets/images/logo.svg" />
       </router-link>
     </div>
-    <div
-      class="menu-button"
-      :class="{ opened: DRAVEROPEN }"
-      @click=TOGGLEDRAWER
-    >
+    <div class="menu-button" :class="{ opened: DRAWER_OPEN }" @click="TOGGLE_DRAWER">
       <i class="menu-button__line"></i>
       <i class="menu-button__line"></i>
       <i class="menu-button__line"></i>
     </div>
-    <Drawer v-if=DRAVEROPEN />
+    <transition name="drawer">
+      <Drawer v-if="DRAWER_OPEN" />
+    </transition>>
   </div>
 </template>
 
@@ -24,20 +22,18 @@ import { mapGetters, mapActions } from "vuex";
 
 export default {
   data: function() {
-    return{}
+    return {};
   },
   name: "Header",
   components: {
     Drawer
   },
   methods: {
-    ...mapActions(['TOGGLEDRAWER']),
+    ...mapActions(["TOGGLE_DRAWER"])
   },
-    computed: {
-    ...mapGetters([
-      'DRAVEROPEN'
-
-    ])}
+  computed: {
+    ...mapGetters(["DRAWER_OPEN"])
+  }
 };
 </script>
 
@@ -48,7 +44,7 @@ export default {
   position: fixed;
   flex-wrap: nowrap;
   z-index: 1;
-  background:  rgba($white, 30%);
+  background: rgba($white, 30%);
   &__logo {
     width: 182px;
     margin: 40px 0 0 60px;
@@ -93,6 +89,23 @@ export default {
         width: 50%;
       }
     }
+  }
+}
+.drawer-enter-active {
+  animation: push-in 0.75s ease;
+}
+
+.drawer-leave-active {
+  // background: #00ff00;
+  animation: push-in 0.5s reverse ease-out;
+}
+@keyframes push-in {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
   }
 }
 </style>
