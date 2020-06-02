@@ -19,74 +19,154 @@
   "vacancies": [
     {
       "title": "Junior frontend developer",
-      "tags": ["html", "css", "js", "webpack", "gulp", "git"],
-      "style": "style-1",
-      "content":
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non, voluptas eius illo quas, saepe voluptate pariatur in deleniti minus sint. Excepturi."
+      "tags": [
+        "html",
+        "css",
+        "js",
+        "webpack",
+        "gulp",
+        "git"
+      ],
+      "style": "blue",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non, voluptas eius illo quas, saepe voluptate pariatur in deleniti minus sint. Excepturi."
     },
     {
       "title": "Middle backend developer",
-      "tags": ["php", "laravel", "MySql", "docker", "Postgress", "git"],
-      "style": "style-2",
-      "content":
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non, voluptas eius illo quas, saepe voluptate pariatur in deleniti minus sint. Excepturi."
+      "tags": [
+        "php",
+        "laravel",
+        "MySql",
+        "docker",
+        "Postgress",
+        "git"
+      ],
+      "style": "purple",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non, voluptas eius illo quas, saepe voluptate pariatur in deleniti minus sint. Excepturi."
     },
     {
       "title": "Sales manager",
-      "tags": ["english", "переговоры", "деловая переписка", "продажи"],
-      "style": "style-3",
-      "content":
-        "<div class='1111'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non, voluptas eius illo quas, saepe voluptate pariatur in deleniti minus sint. Excepturi.</div>"
+      "tags": [
+        "english",
+        "переговоры",
+        "деловая переписка",
+        "продажи"
+      ],
+      "style": "green",
+      "content": "<div class='1111'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non, voluptas eius illo quas, saepe voluptate pariatur in deleniti minus sint. Excepturi.</div>"
     }
-  ], 
+  ],
   "projects": [
     {
+      "id": "001",
       "title": "iGuides",
       "image": "iguides.png",
-      "tags": [
-        "bitrix",
-        "frontend",
-        "backend",
-        "медиаиздание",
-        "новостной портал"
+      "tags":[
+        {
+          "title": "bitrix",
+          "style": "green"
+        },
+        {
+          "title": "frontend",
+          "style": "blue"
+        },
+        {
+          "title": "backend",
+          "style": "green"
+        },
+        {
+          "title": "медиаиздание",
+          "style": "blue"
+        },
+        {
+          "title": "новостной портал",
+          "style": "purple"
+        }
       ],
       "date": "2016"
     },
     {
+      "id": "002",
       "title": "Digger",
       "image": "digger.png",
       "tags": [
-        "bitrix",
-        "frontend",
-        "backend",
-        "медиаиздание",
-        "новостной портал"
+        {
+          "title": "bitrix",
+          "style": "green"
+        },
+        {
+          "title": "frontend",
+          "style": "blue"
+        },
+        {
+          "title": "backend",
+          "style": "green"
+        },
+        {
+          "title": "медиаиздание",
+          "style": "blue"
+        },
+        {
+          "title": "новостной портал",
+          "style": "purple"
+        }
       ],
       "date": "2016"
     },
     {
+      "id": "003",
       "title": "Yandex maps plugin",
       "image": "ya.png",
       "tags": [
-        "bitrix",
-        "frontend",
-        "backend",
-        "медиаиздание",
-        "новостной портал"
+        {
+          "title": "bitrix",
+          "style": "green"
+        },
+        {
+          "title": "frontend",
+          "style": "blue"
+        },
+        {
+          "title": "backend",
+          "style": "green"
+        },
+        {
+          "title": "медиаиздание",
+          "style": "blue"
+        },
+        {
+          "title": "новостной портал",
+          "style": "purple"
+        }
       ],
       "date": "2016"
     },
     {
+      "id": "004",
       "title": "Qood",
       "image": "qood.png",
       "tags": [
-        "bitrix",
-        "frontend",
-        "backend",
-        "медиаиздание",
-        "новостной портал"
+        {
+          "title": "bitrix",
+          "style": "green"
+        },
+        {
+          "title": "frontend",
+          "style": "blue"
+        },
+        {
+          "title": "backend",
+          "style": "green"
+        },
+        {
+          "title": "медиаиздание",
+          "style": "blue"
+        },
+        {
+          "title": "новостной портал",
+          "style": "purple"
+        }
       ],
-      "date": "2016"}
-
+      "date": "2016"
+    }
   ]
 }

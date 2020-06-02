@@ -4,7 +4,7 @@
       <div class="vacancy__header-content">
         <h4 class="vacancy__title">{{vacancy_data.title}}</h4>
         <ul class="tags-list">
-          <li class="tags-list__item tag" v-for="tag in vacancy_data.tags" :key="tag">{{tag}}</li>
+          <li class="tags-list__item tag" v-for="tag in vacancy_data.tags" :key="tag" :class="vacancy_data.style">{{tag}}</li>
         </ul>
       </div>
       <div class="vacancy__toggle-btn toggle-btn">
@@ -48,7 +48,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .vacancy {
   background: #fff;
   padding: 4rem;
@@ -91,39 +91,8 @@ export default {
     margin: 4rem 0 0;
   }
 }
-.tags-list {
-  list-style: none;
-  margin: 1.2rem 0;
-  padding: 0;
-  &__item {
-    display: inline-block;
-    margin-right: 1.2rem;
-  }
-}
-.tag {
-  padding: 3px 8px;
-  font-size: 1.4rem;
-  font-weight: 300;
-}
 
-.style-1 {
-  .tag {
-    color: #0e2783;
-    background: rgba($color: #2196f3, $alpha: 0.2);
-  }
-}
-.style-2 {
-  .tag {
-    color: #6a1b9a;
-    background: rgba($color: #e040fb, $alpha: 0.2);
-  }
-}
-.style-3 {
-  .tag {
-    color: #00903a;
-    background: rgba($color: #00e676, $alpha: 0.2);
-  }
-}
+
 .btn {
   border-radius: 2px;
   border-width: 1px;
@@ -135,15 +104,15 @@ export default {
   cursor: pointer;
   background: none;
   margin: 20px auto;
-  &.style-1 {
+  &.blue {
     color: #0e2783;
     border-color: #0e2783;
   }
-  &.style-2 {
+  &.purple {
     color: #6a1b9a;
     border-color: #6a1b9a;
   }
-  &.style-3 {
+  &.green {
     color: #00903a;
     border-color: #00903a;
   }

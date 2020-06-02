@@ -25,9 +25,13 @@ let store = new Vuex.Store({
         CLOSE_DRAWER: (state) => {
             state.isDrawerOpen = false;
         },
-        OPEN_PROJECT: (state, index) =>{
-            state.selectedProject = index;
-            console.log('1111111', state.selectedProject)
+        OPEN_PROJECT: (state, index) => {
+            if (state.selectedProject == index) {
+                state.selectedProject = null;
+            }
+            else {
+                state.selectedProject = index;
+            }
         }
     },
     actions: {
@@ -65,8 +69,8 @@ let store = new Vuex.Store({
             commit('CLOSE_DRAWER')
 
         },
-        SELECT_PROJECT({commit}, index){
-            commit ('OPEN_PROJECT', index)
+        SELECT_PROJECT({ commit }, index) {
+            commit('OPEN_PROJECT', index)
         }
     },
     getters: {
@@ -80,7 +84,7 @@ let store = new Vuex.Store({
             return state.isDrawerOpen
         },
         SELECTED_PROJECT(state) {
-        return state.selectedProject
+            return state.selectedProject
         }
     }
 }

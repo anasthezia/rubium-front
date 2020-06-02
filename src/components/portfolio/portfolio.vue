@@ -13,21 +13,16 @@
         :project="project"
       />
     </div>
-    <Slider :slickOptions="slickOptions">
-      <!-- <Project class="projects-list__item" v-for="project in PROJECTS" :key="project.title" :project="project" /> -->
-    </Slider>
   </div>
 </template>
 
 <script>
-import Slider from "../common/slider";
 import Project from "./project";
 import { mapActions, mapGetters } from "vuex";
 
 export default {
   name: "portfolo",
   components: {
-    Slider,
     Project
   },
 
@@ -56,9 +51,7 @@ export default {
   },
   mounted() {
     this.GET_PROJECTS_FROM_API();
-    this.slider = this(".projects-list").slick({
-      animation: true
-    });
+
   }
 };
 </script>
@@ -81,12 +74,15 @@ export default {
   .projects-list {
     display: flex;
     flex-wrap: wrap;
-    // width: 900px;
+    // width: 200vw;
     // overflow-x: scroll;
     &__item {
       width: 30vw;
       height: 30vw;
       margin: 40px 20px;
+        // &.opened {
+        //   width: 60vw;
+        // }
     }
   }
   .slick-list {

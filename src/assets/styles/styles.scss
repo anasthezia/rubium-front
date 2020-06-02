@@ -14,6 +14,8 @@ html, body {
 
 .page {
     min-height: 100vh;
+    width: 100%; 
+    overflow: hidden;
     &__title {
         font-size: 4.8rem;
         text-transform: uppercase;
@@ -40,3 +42,30 @@ html, body {
         @include bgGradient(#0026CA, #448AFF, 45deg)
     }
 }
+.tags-list {
+    list-style: none;
+    margin: 1.2rem 0;
+    padding: 0;
+    &__item {
+      display: inline-block;
+      margin-right: 1.2rem;
+    }
+  }
+  .tag {
+    padding: 3px 8px;
+    font-size: 1.4rem;
+    font-weight: 300;
+
+        &.blue {
+          color: #0e2783;
+          background: rgba($color: #2196f3, $alpha: 0.2);
+        }
+        &.purple {
+          color: #6a1b9a;
+          background: rgba($color: #e040fb, $alpha: 0.2);
+      }
+        &.green {
+          color: #00903a;
+          background: rgba($color: #00e676, $alpha: 0.2);
+      }
+  }

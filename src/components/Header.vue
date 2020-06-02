@@ -96,7 +96,6 @@ export default {
 }
 
 .drawer-leave-active {
-  // background: #00ff00;
   animation: push-in 0.5s reverse ease-out;
 }
 @keyframes push-in {
