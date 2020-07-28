@@ -23,12 +23,12 @@ export default {
     console.log("start animation");
   },
   beforeDestroy() {
-    console.log('start destroy')
+    console.log("start destroy");
   },
   components: {
     MainMenu,
-    Footer
-  }
+    Footer,
+  },
 };
 </script>
 
@@ -37,18 +37,28 @@ export default {
   position: fixed;
   top: 0;
   width: 100vw;
-  min-height: 100vh;
-  background: #ffffff;
-  padding: 140px;
+  height: 100vh;
+  overflow-y: scroll;
+  background: $white;
+  padding: 14rem;
   box-sizing: border-box;
   z-index: 1000;
   box-shadow: -10px 0 40px #4343455c;
-
+  @include for-mobile {
+    padding: 8rem 6rem;
+  }
+    @include for-tablet {
+    padding: 8rem 6rem;
+  }
   &__container {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
     align-items: flex-start;
+    @include for-mobile {
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
   }
 }
 </style>

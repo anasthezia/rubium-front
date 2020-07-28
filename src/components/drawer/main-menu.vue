@@ -26,17 +26,25 @@ export default {
     return {};
   },
   computed: {},
-  methods: { ...mapActions(["CLOSE_DRAWER"]) }
+  methods: { ...mapActions(["CLOSE_DRAWER"]) },
 };
 </script>
 
 <style lang="scss">
+.main-menu {
+  display: block;
+  margin-bottom: 4rem;
+  @include for-mobile {
+    border-bottom: 1px solid lighten($black, 50%);
+    width: 100%;
+  }
+}
 .menu {
   list-style: none;
   padding: 0;
   margin: 0;
   &__link {
-    color: #434345;
+    color: $black;
     text-decoration: none;
     font-size: 6.4rem;
     line-height: 1;
@@ -52,6 +60,14 @@ export default {
       text-decoration: none;
       opacity: 1;
       transform: translateX(12px);
+    }
+    @include for-mobile {
+      font-size: 2.8rem;
+      margin-bottom: 2rem;
+    }
+        @include for-tablet {
+      font-size: 4.2rem;
+      margin-bottom: 2rem;
     }
   }
 }
