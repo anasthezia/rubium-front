@@ -23,10 +23,10 @@ import { mapActions, mapGetters } from "vuex";
 export default {
   name: "portfolo",
   components: {
-    Project
+    Project,
   },
 
-  data: function() {
+  data: function () {
     return {
       slider: null,
 
@@ -35,24 +35,23 @@ export default {
         slidesToScroll: 1,
         fade: false,
         dots: false,
-        customPaging: function() {
+        customPaging: function () {
           return '<div class="slick-dot"/>';
         },
         prevArrow: '<div class="slick-prev"/>',
-        nextArrow: '<div class="slick-next"/>'
-      }
+        nextArrow: '<div class="slick-next"/>',
+      },
     };
   },
   methods: {
-    ...mapActions(["GET_PROJECTS_FROM_API"])
+    ...mapActions(["GET_PROJECTS_FROM_API"]),
   },
   computed: {
-    ...mapGetters(["PROJECTS"])
+    ...mapGetters(["PROJECTS"]),
   },
   mounted() {
     this.GET_PROJECTS_FROM_API();
-
-  }
+  },
 };
 </script>
 
@@ -74,15 +73,18 @@ export default {
   .projects-list {
     display: flex;
     flex-wrap: wrap;
-    // width: 200vw;
-    // overflow-x: scroll;
     &__item {
       width: 30vw;
       height: 30vw;
       margin: 40px 20px;
-        // &.opened {
-        //   width: 60vw;
-        // }
+      @include for-mobile {
+        width: 90vw;
+        height: 90vw;
+      }
+      @include for-tablet {
+        width: calc( 50vw - 40px);
+        height: calc( 50vw - 40px);
+      }
     }
   }
   .slick-list {
