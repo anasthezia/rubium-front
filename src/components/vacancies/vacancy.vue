@@ -4,7 +4,12 @@
       <div class="vacancy__header-content">
         <h4 class="vacancy__title">{{vacancy_data.title}}</h4>
         <ul class="tags-list">
-          <li class="tags-list__item tag" v-for="tag in vacancy_data.tags" :key="tag" :class="vacancy_data.style">{{tag}}</li>
+          <li
+            class="tags-list__item tag"
+            v-for="tag in vacancy_data.tags"
+            :key="tag"
+            :class="vacancy_data.style"
+          >{{tag}}</li>
         </ul>
       </div>
       <div class="vacancy__toggle-btn toggle-btn">
@@ -29,12 +34,12 @@ export default {
       type: Object,
       default() {
         return {};
-      }
-    }
+      },
+    },
   },
-  data: function() {
+  data: function () {
     return {
-      isCardOpen: false
+      isCardOpen: false,
     };
   },
   methods: {
@@ -43,16 +48,19 @@ export default {
     },
     openPopup() {
       this.$emit("sentVacancy", this.vacancy_data.title);
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .vacancy {
-  background: #fff;
+  background: $white;
   padding: 4rem;
   box-sizing: border-box;
+  @include for-mobile {
+    padding: 2.8rem;
+  }
   &__header {
     display: flex;
     justify-content: space-between;
@@ -62,6 +70,12 @@ export default {
     font-size: 3.6rem;
     margin: 0 0 1.6rem;
     padding: 0;
+    @include for-mobile {
+      font-size: 2.4rem;
+    }
+    @include for-tablet {
+      font-size: 3.2rem;
+    }
   }
   &__content {
     font-size: 1.6rem;
@@ -72,11 +86,11 @@ export default {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    transition: all .5s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
   &__toggle-btn {
     transform: rotate(0);
-    transition: all .25s ease-in-out;
+    transition: all 0.25s ease-in-out;
   }
   &.opened &__toggle-btn {
     transform: rotate(180deg);
@@ -91,7 +105,6 @@ export default {
     margin: 4rem 0 0;
   }
 }
-
 
 .btn {
   border-radius: 2px;
@@ -121,6 +134,10 @@ export default {
   width: 40px;
   height: 40px;
   position: relative;
+  @include for-mobile {
+    width: 32px;
+    height: 32px;
+  }
   &__line {
     position: absolute;
     height: 50%;

@@ -32,19 +32,16 @@ export default {
   components: {
     Popup,
     vacancyForm,
-    Vacancy
+    Vacancy,
   },
-  data: function() {
+  data: function () {
     return {
       isPopupOpen: false,
-      selectedVacancy: ""
+      selectedVacancy: "",
     };
   },
   computed: {
-    ...mapGetters([
-      'VACANCIES'
-
-    ])
+    ...mapGetters(["VACANCIES"]),
   },
   methods: {
     ...mapActions(["GET_VACANCIES_FROM_API"]),
@@ -55,11 +52,11 @@ export default {
     closePopup() {
       this.isPopupOpen = false;
       this.selectedVacancy = "";
-    }
+    },
   },
   mounted() {
     this.GET_VACANCIES_FROM_API();
-  }
+  },
 };
 </script>
 
@@ -78,12 +75,17 @@ export default {
     width: 80%;
     max-width: 1360px;
     margin: 6rem auto;
+    @include for-mobile {
+      width: 100vw;
+    }
   }
 }
 .vacancies-list {
   list-style: none;
-  width: 1024px;
   margin: 0 auto;
+  @include for-desktop {
+    width: 1024px;
+  }
 
   &__item {
     margin-bottom: 4rem;
