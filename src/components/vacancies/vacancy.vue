@@ -67,8 +67,8 @@ export default {
     align-items: flex-start;
   }
   &__title {
-    font-size: 3.6rem;
     margin: 0 0 1.6rem;
+    font-size: 3.6rem;
     padding: 0;
     @include for-mobile {
       font-size: 2.4rem;

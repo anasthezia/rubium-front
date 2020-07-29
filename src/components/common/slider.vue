@@ -1,9 +1,6 @@
 <template>
   <div class="slider">
-    <slick
-      ref="slick"
-      :options="slickOptions"
-    >
+    <slick ref="slick" :options="slickOptions">
       <slot></slot>
     </slick>
   </div>
@@ -15,7 +12,8 @@ export default {
   name: "slider",
   components: { Slick },
   props: {
-    slickOptions:Object},
+    slickOptions: Object,
+  },
   methods: {
     next() {
       this.$refs.slick.next();
@@ -64,7 +62,7 @@ export default {
     // handleLazeLoadError(event, slick, image, imageSource) {
     //   // console.log("handleLazeLoadError", event, slick, image, imageSource);
     // }
-  }
+  },
 };
 </script>
 
@@ -172,6 +170,7 @@ export default {
   list-style: none;
   display: flex;
   justify-content: center;
+  padding: 0;
   li {
     margin: 0 0.4rem;
     width: 6.4rem;
@@ -179,7 +178,7 @@ export default {
     cursor: pointer;
     .slick-dot {
       background: #0e278380;
-      height: 4px;
+      height: 2px;
       overflow: hidden;
       width: 100%;
       margin: 0;
