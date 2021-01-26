@@ -4,7 +4,7 @@
       <h4 class="footer__title">Работа у нас</h4>
       <ul class="footer-menu">
         <li class="footer-menu__link" @click="CLOSE_DRAWER">
-          <router-link :to="{name: 'vacancies'}">Вакансии</router-link>
+          <router-link :to="{ name: 'vacancies' }">Вакансии</router-link>
         </li>
         <li class="footer-menu__link">
           <a href="#">Стажировка</a>
@@ -22,34 +22,78 @@
     <div class="footer__social">
       <ul class="social-links">
         <li class="social-links__item">
-          <a href="#">
+          <a href="https://vk.com/rubium" target="_blank">
             <img src="./../../assets/images/vk-icon.svg" alt />
           </a>
         </li>
         <li class="social-links__item">
-          <a href="#">
+          <a href="https://taganrog.hh.ru/employer/4585130" target="_blank">
             <img src="./../../assets/images/hh-icon.svg" alt />
           </a>
         </li>
         <li class="social-links__item">
-          <a href="#">
+          <a href="https://www.linkedin.com/company/rubium-web" target="_blank">
             <img src="./../../assets/images/in-icon.svg" alt />
+          </a>
+        </li>
+        <li class="social-links__item">
+          <a
+            title="Участник проекта CMS Magazine"
+            href="//cmsmagazine.ru/creators/rubium/?_type_jump=by_our_banner"
+            target="_blank"
+          >
+            <img
+              alt="Участник проекта CMS Magazine"
+              title="Участник проекта CMS Magazine"
+            src="./../../assets/images/cms-icon.svg"
+            />
           </a>
         </li>
       </ul>
     </div>
     <div class="footer__actions">
-      <button class="btn footer__actions-btn">Написать</button>
+      <button class="btn footer__actions-btn" @click="openPopup">
+        Написать
+      </button>
     </div>
+    <Popup
+      v-if="isPopupOpen"
+      @closePopup="closePopup"
+      popupTitle="Обсудить проект"
+    >
+      <contactForm />
+    </Popup>
   </footer>
 </template>
 
 <script>
 import { mapActions } from "vuex";
+import Popup from "../../components/common/popup";
+import contactForm from "../../components/forms/contact-form";
 
 export default {
   name: "Footer",
-  methods: { ...mapActions(["CLOSE_DRAWER"]) },
+  components: {
+    Popup,
+    contactForm,
+  },
+  methods: {
+    ...mapActions(["CLOSE_DRAWER"]),
+    openPopup() {
+      this.isPopupOpen = true;
+      // this.selectedVacancy = data;
+    },
+    closePopup() {
+      this.isPopupOpen = false;
+      // this.selectedVacancy = "";
+    },
+  },
+  data: function () {
+    return {
+      isPopupOpen: false,
+      // selectedVacancy: "",
+    };
+  },
 };
 </script>
 
@@ -140,10 +184,11 @@ export default {
   padding: 0;
   list-style: none;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   &__item {
     width: 40px;
     height: 40px;
+    margin-right: 20px;
   }
 }
 </style>
