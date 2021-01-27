@@ -2,7 +2,6 @@
   <div class="portfolio-page page">
     <div class="portfolio-page__container">
       <h2 class="portfolio-page__title page__title">Портфолио</h2>
-      <div class="portfolio-page__filters filters">фильтры</div>
     </div>
 
     <div class="projects-list">
@@ -58,12 +57,16 @@ export default {
 <style lang="scss">
 .portfolio-page {
   min-height: 100vh;
-  background: url("../../assets/images/portfolio-bg.png") no-repeat 0 0 / cover
-    transparent;
+  background: #C5CAE9;
   background-attachment: fixed;
   padding: 2rem 0;
   &__title {
-    @include colorGradient(#0026ca, #448aff, 45deg);
+    background: url("../../assets/images/h-icon-1.png") no-repeat 0 0
+      transparent;
+    margin-top: 12rem;
+    color: #1565c0;
+    padding: 10px 0 10px 164px;
+    line-height: 1;
   }
   &__container {
     width: 80%;
@@ -73,17 +76,20 @@ export default {
   .projects-list {
     display: flex;
     flex-wrap: wrap;
+    max-width: 1440px;
+    margin: 0 auto;
+    justify-content: center;
     &__item {
       width: 30vw;
       height: 30vw;
       margin: 40px 20px;
+      @include for-tablet {
+        width: calc(50vw - 40px);
+        height: calc(50vw - 40px);
+      }
       @include for-mobile {
         width: 90vw;
         height: 90vw;
-      }
-      @include for-tablet {
-        width: calc( 50vw - 40px);
-        height: calc( 50vw - 40px);
       }
     }
   }

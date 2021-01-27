@@ -82,6 +82,11 @@
           "style": "purple"
         }
       ],
+      "description": "Портал о гаджетах и технологиях - новости, обзоры, статьи",
+      "link": {
+        "text": "На сайт",
+        "href": "https://www.iguides.ru/"
+      },
       "date": "2016"
     },
     {
@@ -90,7 +95,7 @@
       "image": "digger.png",
       "tags": [
         {
-          "title": "bitrix",
+          "title": "October CMS",
           "style": "green"
         },
         {
@@ -110,6 +115,11 @@
           "style": "purple"
         }
       ],
+      "description": "Портал о продукции компании Apple - новости, обзоры, статьи",
+      "link": {
+        "text": "На сайт",
+        "href": "https://www.digger.ru/"
+      },
       "date": "2016"
     },
     {
@@ -118,11 +128,15 @@
       "image": "ya.png",
       "tags": [
         {
-          "title": "bitrix",
+          "title": "October CMS",
           "style": "green"
         },
         {
-          "title": "frontend",
+          "title": "PHP",
+          "style": "blue"
+        },
+        {
+          "title": "Laravel",
           "style": "blue"
         },
         {
@@ -130,15 +144,16 @@
           "style": "green"
         },
         {
-          "title": "медиаиздание",
+          "title": "Yandex API",
           "style": "blue"
-        },
-        {
-          "title": "новостной портал",
-          "style": "purple"
         }
       ],
-      "date": "2016"
+      "description": "Плагин Yandex-карт для October CMS",
+      "link": {
+        "text": "На маркетплейс",
+        "href": "https://octobercms.com/plugin/rubium-yamapswidgets"
+      },
+      "date": "2018"
     },
     {
       "id": "004",
@@ -146,8 +161,78 @@
       "image": "qood.png",
       "tags": [
         {
-          "title": "bitrix",
+          "title": "October CMS",
           "style": "green"
+        },
+        {
+          "title": "frontend",
+          "style": "blue"
+        },
+        {
+          "title": "backend",
+          "style": "green"
+        },
+        {
+          "title": "новостной портал",
+          "style": "purple"
+        }
+      ],
+      "description": "Корпоративный сайт компании Qood, специализирующейся на оказани юридических, бухгалтерских и консалтинговых услуг",
+      "link": {
+        "text": "На сайт",
+        "href": "https://qood.ru/"
+      },
+      "date": "2019"
+    },
+    {
+      "id": "005",
+      "title": "Finliners",
+      "image": "logo-finliners.png",
+      "tags": [
+        {
+          "title": "go",
+          "style": "green"
+        },
+        {
+          "title": "python",
+          "style": "purple"
+        },
+        {
+          "title": "clickhouse",
+          "style": "blue"
+        },
+        {
+          "title": "backend",
+          "style": "green"
+        },
+        {
+          "title": "frontend",
+          "style": "blue"
+        },
+        {
+          "title": "Портал",
+          "style": "purple"
+        }
+      ],
+      "description": "Портал, посвящённый криптовалюте и криптобиржам. Аналитика, статистика, FinTech новости и обзоры",
+      "link": {
+        "text": "На сайт",
+        "href": "https://finliners.com/"
+      },
+      "date": "2019"
+    }, 
+    {
+      "id": "006",
+      "title": "MD Lavka",
+      "image": "md-lavka-logo.png",
+      "tags": [
+        {
+          "title": "October CMS",
+          "style": "green"
+        },
+        {
+          "title": "laravel",
+          "style": "purple"
         },
         {
           "title": "frontend",
@@ -166,7 +251,12 @@
           "style": "purple"
         }
       ],
-      "date": "2016"
+      "description": "Каталог продукции компании Apple",
+      "link": {
+        "text": "На сайт",
+        "href": "https://mdlavka.ru/"
+      },
+      "date": "2019"
     }
   ]
 }

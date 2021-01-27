@@ -1,28 +1,42 @@
 <template>
   <div
     class="project"
-    :class="{ opened: project.id==SELECTED_PROJECT }"
+    :class="{ opened: project.id == SELECTED_PROJECT }"
     @click="SELECT_PROJECT(project.id)"
   >
     <div class="project__image">
-      <img :src=" require('../../assets/images/projects/' + project.image)" alt />
+      <img
+        :src="require('../../assets/images/projects/' + project.image)"
+        alt
+      />
     </div>
     <transition name="prj">
-      <div class="project__content" v-if="project.id==SELECTED_PROJECT">
+      <div class="project__content" v-if="project.id == SELECTED_PROJECT">
         <div class="project__title">
-          {{project.title}}
-          <div class="project__date">
-            <ul class="tags-list">
-              <li class="tags-list__item tag" v-for="tag in project.tags" :key="tag.title" :class="tag.style">{{tag.title}}</li>
-            </ul>
-            <p class="project__date">
-              Дата запуска: <span>
-              {{project.date}}
-
-              </span>
-              </p>
-          </div>
+          {{ project.title }}
         </div>
+        <ul class="tags-list">
+          <li
+            class="tags-list__item tag"
+            v-for="tag in project.tags"
+            :key="tag.title"
+            :class="tag.style"
+          >
+            {{ tag.title }}
+          </li>
+        </ul>
+        <p class="project__description">
+          {{ project.description }}
+        </p>
+        <p class="project__date">
+          Дата запуска:
+          <span>
+            {{ project.date }}
+          </span>
+        </p>
+        <a class="project__link" target="blank" :href="project.link.href">
+          {{ project.link.text }}
+        </a>
       </div>
     </transition>
   </div>
@@ -37,24 +51,24 @@ export default {
       type: Object,
       default() {
         return {};
-      }
-    }
+      },
+    },
   },
-  data: function() {
+  data: function () {
     return {
-      isProjectOpen: false
+      isProjectOpen: false,
     };
   },
   computed: {
-    ...mapGetters(["SELECTED_PROJECT"])
+    ...mapGetters(["SELECTED_PROJECT"]),
   },
   methods: {
     ...mapActions(["SELECT_PROJECT"]),
 
     selectProject() {
       this.isProjectOpen = !this.isProjectOpen;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -105,11 +119,29 @@ export default {
     font-weight: bold;
     margin: 0 0 1.2rem;
   }
+  &__description {
+    font-size: 1.4rem;
+    font-weight: normal;
+    margin: 2rem 0;
+  }
   &__date {
     font-size: 1.4rem;
     font-weight: 600;
-    span{
+    span {
       font-weight: 400;
+    }
+  }
+  &__link {
+    font-size: 1.2rem;
+    font-weight: 600;
+    position: relative;
+    // text-decoration: none;
+    margin: 4rem 0;
+    display: block;
+    color: $black;
+    text-align: right;
+    &::after {
+      content: "->"
     }
   }
   .tag {
@@ -125,11 +157,11 @@ export default {
 }
 @keyframes push-in {
   0% {
-    transform: scale(.2) rotateX(-180deg);
+    transform: scale(0.2) rotateX(-180deg);
   }
 
   100% {
-    transform: scale(1)  rotateX(0);
+    transform: scale(1) rotateX(0);
   }
 }
 </style>
