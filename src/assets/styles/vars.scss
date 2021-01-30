@@ -1,5 +1,25 @@
 $white: #ffffff;
-$black: #434345; 
+$black: #434345;
+
+$blue-light: #BBDEFB;
+$blue-middle: #42A5F5;
+$blue-dark: #1565C0;
+
+$green-light: #B2DFDB;
+$green-middle: #00BFA5;
+$green-dark: #00838F;
+
+$orange-light:#FFC2AF;
+$orange-middle: #FF8A65;
+$orange-dark: #E64A19;
+
+$pink-light: #FFCDD2;
+$pink-middle: #F48FB1;
+$pink-dark: #FF4081;
+
+$purple-light: #C5CAE9;
+$purple-middle:#7986CB;
+$purple-dark: #4527A0;
 
 $mobile-width: 576px;
 $tablet-width: 768px;
@@ -8,64 +28,83 @@ $desktop-width: 1200px;
 
 @mixin for-small-mobile {
 	@media (max-width: #{$mobile-width - 1px}) {
-	  @content;
+		@content;
 	}
-  }
+}
 
-  @mixin for-mobile {
+@mixin for-mobile {
 	@media (max-width: #{$tablet-width - 1px}) {
-	  @content;
+		@content;
 	}
-  }
+}
 
-  @mixin for-tablet {
+@mixin for-tablet {
 	@media (max-width: #{$desktop-width - 1px}) {
-	  @content;
+		@content;
 	}
-  }
+}
 
-  @mixin for-desktop {
+@mixin for-desktop {
 	@media (min-width: #{$desktop-width}) {
-	  @content;
+		@content;
 	}
-  }
+}
 
 @mixin linearGradient($oldColor, $gradientList, $direction) {
 	background: $oldColor;
-	$directionRevers:null; 
-	@if $direction == left {
+	$directionRevers: null;
+
+	@if $direction==left {
 		$directionRevers: right;
 	}
-	@else if $direction == right {
+
+	@else if $direction==right {
 		$directionRevers: left;
 	}
-	@else if $direction == top {
+
+	@else if $direction==top {
 		$directionRevers: bottom;
 	}
-	@else if $direction == bottom {
+
+	@else if $direction==bottom {
 		$directionRevers: top;
 	}
-	@include buildGradientLine($gradientList); 
+
+	@include buildGradientLine($gradientList);
+
 	@each $prefix in $browsersPrefix {
 		background:-#{$prefix}-linear-gradient($direction, $resultLine);
 	}
+
 	background: linear-gradient(to $directionRevers, $resultLine);
 }
 
 @mixin bgGradient($startColor, $endColor, $direction) {
-    background: $startColor; /* Old browsers */
-    background: -moz-linear-gradient(direction, $startColor 0%, $endColor 100%); /* FF3.6+ */
-    background: -webkit-linear-gradient(direction, $startColor 0%,$endColor 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(direction, $startColor 0%, $endColor 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(direction, $startColor 0%,                                                                                                                                   $endColor 100%); /* IE10+ */
-    background: linear-gradient($startColor 0%,$endColor); /* W3C */
+	background: $startColor;
+	/* Old browsers */
+	background: -moz-linear-gradient(direction, $startColor 0%, $endColor 100%);
+	/* FF3.6+ */
+	background: -webkit-linear-gradient(direction, $startColor 0%, $endColor 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(direction, $startColor 0%, $endColor 100%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(direction, $startColor 0%, $endColor 100%);
+	/* IE10+ */
+	background: linear-gradient($startColor 0%, $endColor);
+	/* W3C */
 }
 
 @mixin colorGradient($startColor, $endColor, $direction) {
-    color: $startColor; /* Old browsers */
-    color: -moz-linear-gradient(direction, $startColor 0%, $endColor 100%); /* FF3.6+ */
-    color: -webkit-linear-gradient(direction, $startColor 0%,$endColor 100%); /* Chrome10+,Safari5.1+ */
-    color: -o-linear-gradient(direction, $startColor 0%, $endColor 100%); /* Opera 11.10+ */
-    color: -ms-linear-gradient(direction, $startColor 0%,                                                                                                                                   $endColor 100%); /* IE10+ */
-    color: linear-gradient($startColor 0%,$endColor); /* W3C */
+	color: $startColor;
+	/* Old browsers */
+	color: -moz-linear-gradient(direction, $startColor 0%, $endColor 100%);
+	/* FF3.6+ */
+	color: -webkit-linear-gradient(direction, $startColor 0%, $endColor 100%);
+	/* Chrome10+,Safari5.1+ */
+	color: -o-linear-gradient(direction, $startColor 0%, $endColor 100%);
+	/* Opera 11.10+ */
+	color: -ms-linear-gradient(direction, $startColor 0%, $endColor 100%);
+	/* IE10+ */
+	color: linear-gradient($startColor 0%, $endColor);
+	/* W3C */
 }

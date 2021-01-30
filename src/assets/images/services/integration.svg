@@ -1,0 +1,30 @@
+<svg width="226" height="226" viewBox="0 0 226 226" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line x1="80.7646" y1="107.091" x2="80.7646" y2="118.908" stroke="white" stroke-width="2"/>
+<line x1="144.281" y1="107.091" x2="144.281" y2="118.908" stroke="white" stroke-width="2"/>
+<line x1="113.262" y1="28.0654" x2="113.262" y2="53.1765" stroke="white" stroke-width="2" stroke-dasharray="4 4"/>
+<circle cx="112.262" cy="11.817" r="10.817" stroke="white" stroke-width="2"/>
+<line x1="52.5421" y1="53.3438" x2="70.2983" y2="71.1" stroke="white" stroke-width="2" stroke-dasharray="4 4"/>
+<circle cx="40.3455" cy="42.5615" r="10.817" transform="rotate(-45 40.3455 42.5615)" stroke="white" stroke-width="2"/>
+<line x1="171.577" y1="52.5423" x2="153.821" y2="70.2985" stroke="white" stroke-width="2" stroke-dasharray="4 4"/>
+<circle cx="182.359" cy="40.3458" r="10.817" transform="rotate(45 182.359 40.3458)" stroke="white" stroke-width="2"/>
+<line x1="197.935" y1="112.523" x2="172.823" y2="112.523" stroke="white" stroke-width="2" stroke-dasharray="4 4"/>
+<circle cx="214.183" cy="111.523" r="10.817" transform="rotate(90 214.183 111.523)" stroke="white" stroke-width="2"/>
+<line x1="28.0654" y1="112" x2="53.1765" y2="112" stroke="white" stroke-width="2" stroke-dasharray="4 4"/>
+<circle cx="11.817" cy="113" r="10.817" transform="rotate(-90 11.817 113)" stroke="white" stroke-width="2"/>
+<line x1="53.3437" y1="172.379" x2="71.0999" y2="154.622" stroke="white" stroke-width="2" stroke-dasharray="4 4"/>
+<circle cx="42.5615" cy="184.575" r="10.817" transform="rotate(-135 42.5615 184.575)" stroke="white" stroke-width="2"/>
+<line x1="112.738" y1="197.935" x2="112.738" y2="172.824" stroke="white" stroke-width="2" stroke-dasharray="4 4"/>
+<circle cx="113.738" cy="214.183" r="10.817" transform="rotate(180 113.738 214.183)" stroke="white" stroke-width="2"/>
+<line x1="170.902" y1="172.316" x2="153.146" y2="154.56" stroke="white" stroke-width="2" stroke-dasharray="4 4"/>
+<circle cx="183.098" cy="183.098" r="10.817" transform="rotate(135 183.098 183.098)" stroke="white" stroke-width="2"/>
+<rect x="56.3921" y="84.4575" width="111.739" height="21.634" stroke="white" stroke-width="2"/>
+<rect x="70.1636" y="92.3203" width="23.634" height="5.9085" fill="white"/>
+<rect x="125.556" y="92.3203" width="5.9085" height="5.9085" fill="white"/>
+<rect x="138.85" y="92.3203" width="5.9085" height="5.9085" fill="white"/>
+<rect x="152.144" y="92.3203" width="5.9085" height="5.9085" fill="white"/>
+<rect x="56.3921" y="119.909" width="111.739" height="21.634" stroke="white" stroke-width="2"/>
+<rect x="70.1636" y="127.771" width="23.634" height="5.9085" fill="white"/>
+<rect x="125.556" y="127.771" width="5.9085" height="5.9085" fill="white"/>
+<rect x="138.85" y="127.771" width="5.9085" height="5.9085" fill="white"/>
+<rect x="152.144" y="127.771" width="5.9085" height="5.9085" fill="white"/>
+</svg>

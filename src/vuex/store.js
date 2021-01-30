@@ -9,8 +9,10 @@ let store = new Vuex.Store({
     state: {
         vacancies: [],
         projects: [],
+        services: [],
         selectedProject: null,
-        isDrawerOpen: false
+        selectedService: null,
+        isDrawerOpen: false,
     },
     mutations: {
         SET_VACANSIES_TO_STATE: (state, vacancies) => {
@@ -18,6 +20,9 @@ let store = new Vuex.Store({
         },
         SET_PROJECTS_TO_STATE: (state, projects) => {
             state.projects = projects.data;
+        },
+        SET_SERVICES_TO_STATE: (state, services) => {
+            state.services = services.data;
         },
         CHANGE_DRAWER: (state) => {
             state.isDrawerOpen = !state.isDrawerOpen;
@@ -28,17 +33,25 @@ let store = new Vuex.Store({
         OPEN_PROJECT: (state, index) => {
             if (state.selectedProject == index) {
                 state.selectedProject = null;
-            }
-            else {
+            } else {
                 state.selectedProject = index;
             }
-        }
+            
+            console.log('333', state.selectedProject)
+        },
+        OPEN_SERVICE: (state, index) => {
+            state.selectedService = index;
+            console.log('11111111111111', index)
+        },
+
     },
     actions: {
-        GET_VACANCIES_FROM_API({ commit }) {
+        GET_VACANCIES_FROM_API({
+            commit
+        }) {
             return axios('http://localhost:3000/vacancies', {
-                metod: "GET"
-            })
+                    metod: "GET"
+                })
                 .then((vacancies) => {
                     commit("SET_VACANSIES_TO_STATE", vacancies);
                     return vacancies;
@@ -48,10 +61,12 @@ let store = new Vuex.Store({
                     return error;
                 })
         },
-        GET_PROJECTS_FROM_API({ commit }) {
+        GET_PROJECTS_FROM_API({
+            commit
+        }) {
             return axios('http://localhost:3000/projects', {
-                metod: "GET"
-            })
+                    metod: "GET"
+                })
                 .then((projects) => {
                     commit("SET_PROJECTS_TO_STATE", projects);
                     return projects;
@@ -61,17 +76,42 @@ let store = new Vuex.Store({
                     return error;
                 })
         },
-
-        TOGGLE_DRAWER({ commit }) {
+        GET_SERVICES_FROM_API({
+            commit
+        }) {
+            return axios('http://localhost:3000/services', {
+                    metod: "GET"
+                })
+                .then((services) => {
+                    commit("SET_SERVICES_TO_STATE", services);
+                    return services;
+                })
+                .catch((error) => {
+                    console.log(error);
+                    return error;
+                })
+        },
+        TOGGLE_DRAWER({
+            commit
+        }) {
             commit('CHANGE_DRAWER')
         },
-        CLOSE_DRAWER({ commit }) {
+        CLOSE_DRAWER({
+            commit
+        }) {
             commit('CLOSE_DRAWER')
 
         },
-        SELECT_PROJECT({ commit }, index) {
+        SELECT_PROJECT({
+            commit
+        }, index) {
             commit('OPEN_PROJECT', index)
-        }
+        },
+        SELECT_SERVICE({
+            commit
+        }, index) {
+            commit('OPEN_SERVICE', index)
+        },
     },
     getters: {
         VACANCIES(state) {
@@ -85,9 +125,14 @@ let store = new Vuex.Store({
         },
         SELECTED_PROJECT(state) {
             return state.selectedProject
+        },
+        SELECTED_SERVICE(state) {
+            return state.selectedService
+        },
+        SERVICES(state) {
+            return state.services
         }
     }
-}
-);
+});
 
 export default store;

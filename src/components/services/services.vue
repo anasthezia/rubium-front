@@ -1,84 +1,51 @@
 <template>
   <div class="services">
-    <Slider :slickOptions="slickOptions">
-      <div class="service" v-for="service in services" :key="service.title">
-        <div class="service__container">
-          <div class="service__image" href="./../../assets/images/services/webdevelopment.svg">
-            <img :src=" require('../../assets/images/services/' + service.image)" alt />
-          </div>
-          <div class="service__content">{{service.title}}</div>
+    <h2>{{ SERVICES[0] }} qqqqqqqqqqq</h2>
+    <div class="services-list">
+      <div class="services__row">
+        <div
+          class="service-item"
+          v-for="service in SERVICES"
+          :key="service.id"
+          :class="[service.style, { active: service.id == SERVICES[active].id }]"
+          @click="active=SELECT_SERVICE(service.id)"
+        >
+          <img
+            :src="require('../../assets/images/services/' + service.image)"
+            alt
+          />
         </div>
       </div>
-    </Slider>
+    </div>
   </div>
 </template>
+
 <script>
-// import Slick from "vue-slick";
-import Slider from "../common/slider";
+import { mapActions, mapGetters } from "vuex";
 
 export default {
   name: "Services",
 
-  components: { Slider },
   data() {
     return {
-      services: [
-        {
-          image: "webdevelopment.svg",
-          title: "Веб-разработка",
-        },
-        {
-          image: "integrations.svg",
-          title: "Интеграция сайтов с CRM и ERP",
-        },
-        {
-          image: "monitoring.svg",
-          title: "Техподдержка и мониторинг",
-        },
-        {
-          image: "parcers.svg",
-          title: "Парсеры",
-        },
-        {
-          image: "highload.svg",
-          title: "Сложные и нетиповые решения",
-        },
-      ],
-      slickOptions: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        fade: true,
-        dots: true,
-        customPaging: function () {
-          return '<div class="slick-dot"/>';
-        },
-        prevArrow: '<div class="slick-prev"/>',
-        nextArrow: '<div class="slick-next"/>',
-        responsive: [
-          {
-            breakpoint: 768,
-            settings: {
-              arrows: false,
-            },
-          },
-        ],
-      },
+      active: 0
     };
   },
+  computed: {
+    ...mapGetters(["SERVICES", "SELECTED_SERVICE"]),
+    selectedId() {
+      return this.$store.getters;
+    },
+  },
+
   methods: {
-    next() {
-      this.$refs.slick.next();
-    },
-
-    prev() {
-      this.$refs.slick.prev();
-    },
-
-    reInit() {
-      this.$nextTick(() => {
-        this.$refs.slick.reSlick();
-      });
-    },
+    ...mapActions([
+      "GET_SERVICES_FROM_API",
+      "SELECT_SERVICE",
+    ])
+  },
+  mounted() {
+    this.GET_SERVICES_FROM_API();
   },
 };
 </script>
@@ -86,16 +53,78 @@ export default {
 <style lang="scss" >
 .services {
   height: 100vh;
-  .slick-list {
-    width: calc(100vw - 180px);
-    @include for-mobile {
-      width: 90vw;
+}
+.services-list {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 90vh;
+  height: 60vh;
+}
+.services__row {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.service-item {
+  width: 30vh;
+  height: 30vh;
+  transition: background 0.7s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transform: scale(0.9);
+    transition: transform 0.7s;
+  }
+  &:hover > img {
+    transform: scale(1);
+  }
+  &:first-of-type {
+    margin-left: 1px;
+  }
+  &.pink {
+    background: $pink-middle;
+    &:hover,
+    &.active {
+      background: $pink-dark;
     }
   }
-  .slick-slide {
-    height: calc(100vh - 120px);
+  &.blue {
+    background: $blue-middle;
+    &:hover,
+    &.active {
+      background: $blue-dark;
+    }
+  }
+  &.purple {
+    background: $purple-middle;
+    &:hover,
+    &.active {
+      background: $purple-dark;
+    }
+  }
+  &.orange {
+    background: $orange-middle;
+    &:hover,
+    &.active {
+      background: $orange-dark;
+    }
+  }
+  &.green {
+    background: $green-middle;
+    &:hover,
+    &.active {
+      background: $green-dark;
+    }
   }
 }
+
 .service {
   width: 100%;
   height: 100%;
