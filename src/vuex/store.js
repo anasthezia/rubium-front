@@ -11,7 +11,7 @@ let store = new Vuex.Store({
         projects: [],
         services: [],
         selectedProject: null,
-        selectedService: null,
+        selectedService: {},
         isDrawerOpen: false,
     },
     mutations: {
@@ -36,12 +36,9 @@ let store = new Vuex.Store({
             } else {
                 state.selectedProject = index;
             }
-            
-            console.log('333', state.selectedProject)
         },
         OPEN_SERVICE: (state, index) => {
             state.selectedService = index;
-            console.log('11111111111111', index)
         },
 
     },

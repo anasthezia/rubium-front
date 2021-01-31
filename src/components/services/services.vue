@@ -1,20 +1,27 @@
 <template>
-  <div class="services">
-    <h2>{{ SERVICES[0] }} qqqqqqqqqqq</h2>
+  <div class="services-page page">
+    <div class="service" :v-if="SELECTED_SERVICE">
+      <h2 class="services-page__title">
+        {{ SELECTED_SERVICE.title }}
+      </h2>
+      <div class="service__content">
+        <p v-for="item in SELECTED_SERVICE.text" :key="item.p">
+          {{ item.p }}
+        </p>
+      </div>
+    </div>
     <div class="services-list">
-      <div class="services__row">
-        <div
-          class="service-item"
-          v-for="service in SERVICES"
-          :key="service.id"
-          :class="[service.style, { active: service.id == SERVICES[active].id }]"
-          @click="active=SELECT_SERVICE(service.id)"
-        >
-          <img
-            :src="require('../../assets/images/services/' + service.image)"
-            alt
-          />
-        </div>
+      <div
+        class="service-item"
+        v-for="service in SERVICES"
+        :key="service.id"
+        :class="[service.style, { active: service.id == SELECTED_SERVICE.id }]"
+        @click="SELECT_SERVICE(service)"
+      >
+        <img
+          :src="require('../../assets/images/services/' + service.image)"
+          alt
+        />
       </div>
     </div>
   </div>
@@ -28,21 +35,15 @@ export default {
 
   data() {
     return {
-      active: 0
+      activeId: 0,
     };
   },
   computed: {
     ...mapGetters(["SERVICES", "SELECTED_SERVICE"]),
-    selectedId() {
-      return this.$store.getters;
-    },
   },
 
   methods: {
-    ...mapActions([
-      "GET_SERVICES_FROM_API",
-      "SELECT_SERVICE",
-    ])
+    ...mapActions(["GET_SERVICES_FROM_API", "SELECT_SERVICE"]),
   },
   mounted() {
     this.GET_SERVICES_FROM_API();
@@ -51,22 +52,30 @@ export default {
 </script>
 
 <style lang="scss" >
-.services {
+.services-page {
   height: 100vh;
+  &__title {
+    font-size: 3.2rem; 
+    font-weight: 600;
+  }
 }
+
 .services-list {
   position: absolute;
   bottom: 0;
   right: 0;
   width: 90vh;
   height: 60vh;
-}
-.services__row {
   display: flex;
   justify-content: flex-end;
   flex-wrap: wrap;
   flex-direction: row;
+  @include for-tablet {
+    width: 100vw;
+    height: 20vw;
+  }
 }
+
 .service-item {
   width: 30vh;
   height: 30vh;
@@ -75,9 +84,13 @@ export default {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  @include for-tablet {
+    width: 20vw;
+    height: 20vw;
+  }
   img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 90%;
+    max-height: 90%;
     object-fit: contain;
     transform: scale(0.9);
     transition: transform 0.7s;
@@ -87,6 +100,9 @@ export default {
   }
   &:first-of-type {
     margin-left: 1px;
+    @include for-tablet {
+      margin-left: 0;
+    }
   }
   &.pink {
     background: $pink-middle;
@@ -128,6 +144,11 @@ export default {
 .service {
   width: 100%;
   height: 100%;
+  padding-left: 6rem;
+  box-sizing: border-box;
+  @include for-tablet {
+    padding: 0 10vw;
+  }
   &__container {
     display: flex;
     flex-direction: row;
@@ -140,36 +161,17 @@ export default {
       flex-direction: column;
     }
   }
-  &__image {
-    width: 65%;
-    text-align: center;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    @include for-tablet {
-      width: 80%;
-    }
-    @include for-mobile {
-      width: 100%;
-    }
-    img {
-      max-width: 100%;
-      height: fit-content;
-    }
-  }
+
   &__content {
-    width: 35%;
+    width: 40vw;
     text-align: left;
-    font-size: 4rem;
-    text-transform: uppercase;
+    font-size: 2.8rem;
     font-weight: 500;
     line-height: 1.5;
     padding: 0 4rem 0 0;
     @include for-tablet {
       width: 100%;
       padding: 0;
-      text-align: center;
       font-size: 2.4rem;
     }
     @include for-mobile {
