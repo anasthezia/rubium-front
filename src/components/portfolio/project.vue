@@ -65,9 +65,6 @@ export default {
   methods: {
     ...mapActions(["SELECT_PROJECT"]),
 
-    selectProject() {
-      this.isProjectOpen = !this.isProjectOpen;
-    },
   },
 };
 </script>

@@ -26,21 +26,7 @@ export default {
   },
 
   data: function () {
-    return {
-      slider: null,
-
-      slickOptions: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        fade: false,
-        dots: false,
-        customPaging: function () {
-          return '<div class="slick-dot"/>';
-        },
-        prevArrow: '<div class="slick-prev"/>',
-        nextArrow: '<div class="slick-next"/>',
-      },
-    };
+    return {};
   },
   methods: {
     ...mapActions(["GET_PROJECTS_FROM_API"]),
@@ -57,13 +43,12 @@ export default {
 <style lang="scss">
 .portfolio-page {
   min-height: 100vh;
-  background: #C5CAE9;
+  background: #c5cae9;
   background-attachment: fixed;
   padding: 2rem 0;
   &__title {
     background: url("../../assets/images/h-icon-1.png") no-repeat 0 0
       transparent;
-    margin-top: 12rem;
     color: #1565c0;
     padding: 10px 0 10px 164px;
     line-height: 1;

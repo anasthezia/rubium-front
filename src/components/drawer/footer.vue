@@ -7,7 +7,7 @@
           <router-link :to="{ name: 'vacancies' }">Вакансии</router-link>
         </li>
         <li class="footer-menu__link">
-          <a href="#">Стажировка</a>
+          <a href="https://vk.com/@rubium-pro-stazhirovku-faq" target="_blank">Стажировка</a>
         </li>
       </ul>
     </div>
@@ -45,7 +45,20 @@
             <img
               alt="Участник проекта CMS Magazine"
               title="Участник проекта CMS Magazine"
-            src="./../../assets/images/cms-icon.svg"
+              src="./../../assets/images/cms-icon.svg"
+            />
+          </a>
+        </li>
+        <li class="social-links__item">
+          <a
+            title="Участник проекта CMS Magazine"
+            href="https://github.com/rubium-web"
+            target="_blank"
+          >
+            <img
+              alt="Github"
+              title="Наши открытые проекты на Gtthub"
+              src="./../../assets/images/github_icon.svg"
             />
           </a>
         </li>

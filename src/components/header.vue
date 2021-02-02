@@ -2,7 +2,7 @@
   <div class="header">
     <div class="header__logo" v-if="!$route.meta.hideLogo">
       <router-link :to="{name: 'main'}">
-        <img alt="Rubium logo" src="../assets/images/logo.svg" />
+        <img alt="Rubium logo" src="../assets/images/header-logo.svg" />
       </router-link>
     </div>
     <div class="menu-button" :class="{ opened: DRAWER_OPEN }" @click="TOGGLE_DRAWER">
@@ -12,7 +12,7 @@
     </div>
     <transition name="drawer">
       <Drawer v-if="DRAWER_OPEN" />
-    </transition>>
+    </transition>
   </div>
 </template>
 
@@ -21,19 +21,19 @@ import Drawer from "../components/drawer/drawer";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
-  data: function() {
+  data: function () {
     return {};
   },
   name: "Header",
   components: {
-    Drawer
+    Drawer,
   },
   methods: {
-    ...mapActions(["TOGGLE_DRAWER"])
+    ...mapActions(["TOGGLE_DRAWER"]),
   },
   computed: {
-    ...mapGetters(["DRAWER_OPEN"])
-  }
+    ...mapGetters(["DRAWER_OPEN"]),
+  },
 };
 </script>
 
@@ -46,24 +46,43 @@ export default {
   z-index: 1;
   background: rgba($white, 30%);
   &__logo {
-    width: 182px;
-    margin: 40px 0 0 60px;
+    margin: 40px 0 40px 60px;
+    height: 40px;
+    img {
+      height: 100%; 
+      width: auto;
+    }
+    @include for-tablet {
+      margin: 20px 0 20px 40px;
+    }
+    @include for-mobile {
+      margin: 12px 0 12px 20px;
+          width: 182px;
+
+    }
   }
 }
 .menu-button {
   position: fixed;
   right: 58px;
-  top: 54px;
+  top: 48px;
   height: 24px;
   width: 40px;
   z-index: 1002;
   cursor: pointer;
-  background: #fff;
+  // background: $white;
+  @include for-tablet {
+    top: 32px;
+  }
+  @include for-mobile {
+    right: 20px;
+    top: 20px;
+  }
   &__line {
     position: absolute;
     width: 100%;
-    height: 3px;
-    background: #0e2783;
+    height: 2px;
+    background: $black;
     right: 0;
     transition: all 0.25s;
     transform-origin: right;
