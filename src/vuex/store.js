@@ -11,7 +11,7 @@ let store = new Vuex.Store({
         projects: [],
         services: [],
         selectedProject: null,
-        selectedService: {},
+        selectedService: null,
         isDrawerOpen: false,
     },
     mutations: {
