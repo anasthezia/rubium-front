@@ -20,15 +20,27 @@ body {
   overflow: hidden;
   padding-top: 12rem;
   box-sizing: border-box;
+  position: relative;
+  &:before {
+    content: "";
+    background: url("~@/assets/images/bg-1.svg") no-repeat right bottom / contain transparent;
+    background-attachment: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    position: absolute;
+}
   @include for-tablet {
     padding-top: 8.6rem;
   }
 
   &__title {
-    font-family: 'Poiret One', cursive;
     font-size: 4rem;
     text-transform: uppercase;
     font-weight: 600;
+    padding: 10px 0;
+    line-height: 1;
 
     @include for-tablet {
       font-size: 2.8rem;
@@ -76,17 +88,25 @@ body {
   font-weight: 300;
 
   &.blue {
-    color: #0e2783;
-    background: rgba($color: #2196f3, $alpha: 0.2);
+    color: $blue-dark;
+    background: $blue-light;
   }
 
   &.purple {
-    color: #6a1b9a;
-    background: rgba($color: #e040fb, $alpha: 0.2);
+    color: $purple-dark;
+    background: $purple-light;
   }
 
   &.green {
-    color: #00903a;
-    background: rgba($color: #00e676, $alpha: 0.2);
+    color: $green-dark;
+    background: $green-light;
+  }
+  &.pink {
+    color: $pink-dark;
+    background: $pink-light;
+  }
+  &.orange {
+    color: $orange-dark;
+    background: $orange-light;
   }
 }

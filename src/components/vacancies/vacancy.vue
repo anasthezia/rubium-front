@@ -58,6 +58,7 @@ export default {
   background: $white;
   padding: 4rem;
   box-sizing: border-box;
+  position: relative;
   @include for-mobile {
     padding: 2.8rem;
   }

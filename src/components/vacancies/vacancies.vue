@@ -2,7 +2,7 @@
 
 <template>
   <div class="vacancies-page page">
-    <div class="vacancies-page__container">
+    <div class="page__container vacancies-page__container">
       <h2 class="page__title vacancies-page__title">Вакансии</h2>
       <div class="vacancies-list">
         <Vacancy
@@ -15,7 +15,11 @@
         />
       </div>
     </div>
-    <Popup v-if="isPopupOpen" @closePopup="closePopup" popupTitle="Отклик на вакансию">
+    <Popup
+      v-if="isPopupOpen"
+      @closePopup="closePopup"
+      popupTitle="Отклик на вакансию"
+    >
       <vacancyForm :selectedVacancy="selectedVacancy" />
     </Popup>
   </div>
@@ -63,13 +67,8 @@ export default {
 <style lang="scss" scoped>
 .vacancies-page {
   min-height: 100vh;
-  background: url("../../assets/images/bg.png") no-repeat 0 0 / cover
-    transparent;
-  background-attachment: fixed;
   padding: 2rem 0;
-  &__title {
-    @include colorGradient(#1b9f89, #55d999, 45deg);
-  }
+  @include bgGradient(transparent, $green-light, 135deg);
 
   &__container {
     width: 80%;

@@ -43,16 +43,8 @@ export default {
 <style lang="scss">
 .portfolio-page {
   min-height: 100vh;
-  background: #c5cae9;
-  background-attachment: fixed;
+  @include bgGradient(transparent, $purple-light, 135deg);
   padding: 2rem 0;
-  &__title {
-    background: url("../../assets/images/h-icon-1.png") no-repeat 0 0
-      transparent;
-    color: #1565c0;
-    padding: 10px 0 10px 164px;
-    line-height: 1;
-  }
   &__container {
     width: 80%;
     max-width: 1360px;

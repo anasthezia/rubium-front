@@ -44,7 +44,6 @@ export default {
   position: fixed;
   flex-wrap: nowrap;
   z-index: 1;
-  background: rgba($white, 30%);
   &__logo {
     margin: 40px 0 40px 60px;
     height: 40px;

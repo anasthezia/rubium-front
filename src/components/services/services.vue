@@ -1,7 +1,7 @@
 <template>
-  <div class="services-page page">
-    <div class="services-page__container">
-      <h2 class="services-page__title">Услуги</h2>
+  <div class="page services-page ">
+    <div class="page__container services-page__container">
+      <h2 class="page__title services-page__title">Услуги</h2>
       <div class="services-page__wrapper">
         <div class="services-menu">
           <div
@@ -71,32 +71,27 @@ export default {
 <style lang="scss" >
 .services-page {
   height: 100vh;
-  background: url("./../../assets/images/services-bg.png") no-repeat right
-    bottom / contain;
+  @include bgGradient(transparent, $blue-light, 135deg);
   @include for-mobile {
     height: auto;
-  }
-  &__title {
-font-size: 5.2rem;
-    font-weight: 600;
-    margin-bottom: 80px;
   }
   &__container {
     width: 80%;
     max-width: 1360px;
     margin: 6rem auto;
+    position: relative;
     @include for-mobile {
-      // flex-direction: column;
       width: 100%;
       margin: 0;
     }
   }
-    &__wrapper {
-      display: flex;
-      @include for-mobile {
-        flex-direction: column;
-      }
+  &__wrapper {
+    display: flex;
+    margin-top: 8rem;
+    @include for-mobile {
+      flex-direction: column;
     }
+  }
 }
 .services-menu {
   position: relative;
@@ -179,8 +174,7 @@ font-size: 5.2rem;
   height: auto;
   flex: 1;
   display: block;
-  box-shadow: (0 0 50px) rgba(0, 0, 0, 0.15);
-  background: #ffffffe8;
+  background: #ffffff;
   display: flex;
   padding: 8rem 4rem;
   &__content {
@@ -229,29 +223,19 @@ font-size: 5.2rem;
     width: auto;
     height: auto;
   }
-  &::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: aqua;
-    transform: translate(40px, 40px);
-    transition: background (1s);
-  }
-  &::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    transform: translate(40px, 40px);
-    // z-index: -1;
-    opacity: 0.5;
-    transition: background (1s);
-  }
+
+  // &::before {
+  //   position: absolute;
+  //   // content: "";
+  //   top: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   right: 0;
+  //   transform: translate(40px, 40px);
+  //   // z-index: -1;
+  //   opacity: 0.25;
+  //   transition: background (1s);
+  // }
   &::after {
     position: absolute;
     content: "";
